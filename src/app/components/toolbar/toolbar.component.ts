@@ -8,7 +8,7 @@ import {Paths} from '../../models/paths.enum';
 })
 export class ToolbarComponent implements OnInit {
   curPath: Paths = Paths.HOME;
-  loggedIn = true;
+  loggedIn = false;
   username = 'Username';
   projectName = 'ProjectName';
   commandName = 'CommandName';

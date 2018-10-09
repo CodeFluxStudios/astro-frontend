@@ -4,10 +4,8 @@
 
 @import "custom-dark-theme";
 
-@import "custom-elements/snackbar-theme";
-
 body {
   @include angular-material-theme($custom-theme);
 
-  @include snackbar-component-theme($custom-theme);
+  @import "custom-elements/snackbar-theme";
 }
