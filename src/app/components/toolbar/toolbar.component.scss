@@ -1,0 +1,36 @@
+mat-toolbar {
+  min-height: 64px;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+
+  .toolbar-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 33.333%;
+    max-width: 33.333%;
+    padding: 0 20px;
+
+    &:first-child {
+      justify-content: flex-start;
+      padding: 0;
+    }
+
+    &:last-child {
+      justify-content: flex-end;
+      padding: 0;
+    }
+
+    #commandDetails {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  .mat-headline,
+  .mat-title {
+    margin: 0;
+  }
+}

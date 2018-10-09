@@ -16,17 +16,26 @@ import {
   MatToolbarModule
 } from '@angular/material';
 
+import { AppRoutingModule } from './app-routing.module';
+
 import {ThemeTestComponent} from './components/theme-test/theme-test.component';
+
+import { ToolbarComponent } from './components/toolbar/toolbar.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ThemeTestComponent // TODO: DELETE FOR PRODUCTION
+    ThemeTestComponent,
+    ToolbarComponent,
+    FooterComponent,
+    HomeComponent // TODO: DELETE FOR PRODUCTION
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MatButtonModule, MatChipsModule, MatProgressBarModule, MatProgressSpinnerModule, MatToolbarModule, MatCardModule, MatButtonToggleModule, MatDialogModule, MatSnackBarModule, MatIconModule
+    MatButtonModule, MatChipsModule, MatProgressBarModule, MatProgressSpinnerModule, MatToolbarModule, MatCardModule, MatButtonToggleModule, MatDialogModule, MatSnackBarModule, MatIconModule, AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
