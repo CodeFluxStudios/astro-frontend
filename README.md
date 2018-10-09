@@ -1,10 +1,24 @@
-# AstroFrontend
+# Astro Bot Frontend
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.2.
 
-## Development server
+# Testing and Building
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### 1. Install Node.js and NPM
+
+If you haven't [Node.js](https://nodejs.org/en/) already installed, download and install it.
+
+### 2. Install Angular
+
+If you haven't Angular already installed, run `npm install -g @angular/cli` to install the [Angular CLI](https://github.com/angular/angular-cli).
+
+### 3. Installing NPM packages
+
+If you havent already installed the required packages, run `npm install` **in the project's root directory** to install the required dependencies.
+
+### 4. Setting up a development Server
+
+Run `ng serve` **in the project's root directory** for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Code scaffolding
 
