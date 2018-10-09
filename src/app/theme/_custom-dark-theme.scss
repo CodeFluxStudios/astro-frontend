@@ -1,0 +1,59 @@
+@import "custom-dark-colors";
+
+// Mat Colors
+$light-secondary-text: rgba(white, 0.7);
+$light-disabled-text: rgba(white, 0.5);
+$light-dividers: rgba(white, 0.12);
+$light-focused: rgba(white, 0.12);
+
+$custom-theme-background: (
+  status-bar: map_get($custom-dark-palette, A700),
+  app-bar: map-get($custom-dark-palette, 900),
+  background: map-get($custom-dark-palette, 800),
+  hover: rgba(white, 0.04),
+  card: map-get($custom-dark-palette, 700),
+  dialog: map-get($custom-dark-palette, 900),
+  disabled-button: rgba(white, 0.12),
+  raised-button: map-get($custom-dark-palette, 700),
+  focused-button: $light-focused,
+  selected-button: map_get($custom-dark-palette, 700),
+  selected-disabled-button: map-get($custom-dark-palette, 700),
+  disabled-button-toggle: map_get($custom-dark-palette, A700),
+  unselected-chip: map_get($custom-dark-palette, 600),
+  disabled-list-option: map_get($custom-dark-palette, A700),
+);
+
+$custom-theme-foreground: (
+  base: white,
+  divider: $light-dividers,
+  dividers: $light-dividers,
+  disabled: $light-disabled-text,
+  disabled-button: rgba(white, 0.3),
+  disabled-text: $light-disabled-text,
+  hint-text: $light-disabled-text,
+  secondary-text: $light-secondary-text,
+  icon: white,
+  icons: white,
+  text: white,
+  slider-min: white,
+  slider-off: rgba(white, 0.3),
+  slider-off-active: rgba(white, 0.3),
+);
+
+@function create-custom-theme($primary, $accent, $warn: mat-palette($mat-red)) {
+  @return (
+    primary: $primary,
+    accent: $accent,
+    warn: $warn,
+    is-dark: true,
+    foreground: $custom-theme-foreground,
+    background: $custom-theme-background,
+  );
+}
+
+$custom-theme-primary: mat-palette($mat-yellow, 600, 200, 800);
+;
+$custom-theme-accent: mat-palette($mat-cyan, 200);
+$custom-theme-warn: mat-palette($mat-red, 400);
+
+$custom-theme: create-custom-theme($custom-theme-primary, $custom-theme-accent, $custom-theme-warn);

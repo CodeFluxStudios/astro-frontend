@@ -1,0 +1,33 @@
+// Custom dark palette
+$custom-dark-palette: (
+  50: #eef0f2,
+  100: #d3dadf,
+  200: #b7c2ca,
+  300: #99aab5,
+  400: #8297a4,
+  500: #76808A,
+  600: #5d636a,
+  700: #3e444a,
+  800: #2C2F33,
+  900: #23272A,
+  A100: #ffffff,
+  A200: #C1CCD4,
+  A400: #30373D,
+  A700: #0F1316,
+  contrast: (
+    50: $black-87-opacity,
+    100: $black-87-opacity,
+    200: $black-87-opacity,
+    300: $black-87-opacity,
+    400: $black-87-opacity,
+    500: $black-87-opacity,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+    A100: $black-87-opacity,
+    A200: $black-87-opacity,
+    A400: white,
+    A700: white,
+  )
+);

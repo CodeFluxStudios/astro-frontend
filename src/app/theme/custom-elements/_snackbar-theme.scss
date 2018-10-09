@@ -1,0 +1,13 @@
+@import '~@angular/material/theming';
+@import "../custom-dark-colors";
+
+@mixin snackbar-component-theme($theme) {
+
+  .mat-snack-bar-container {
+    background-color: map-get($custom-dark-palette, 300);
+
+    simple-snack-bar {
+      justify-content: center;
+    }
+  }
+}
