@@ -1,0 +1,55 @@
+:host {
+  flex: 1 1 auto;
+  display: flex;
+  align-content: stretch;
+}
+
+div.layout-container {
+  margin-top: 50px;
+  margin-bottom: 50px;
+
+  #headline {
+    display: flex;
+    margin-bottom: 48px;
+    justify-content: space-between;
+
+    h2 {
+      margin: 0;
+    }
+
+    button {
+      font-size: 18px;
+      padding-left: 8px;
+      mat-icon {
+        font-size: 35px;
+        width: 35px;
+        height: 35px;
+        margin-right: 8px;
+      }
+    }
+  }
+
+  #projectContainer {
+    display: flex;
+    flex-wrap: wrap;
+
+    .project-card {
+      min-width: 200px;
+      width: 200px;
+      max-width: 200px;
+      text-align: center;
+      padding: 15px;
+      margin-right: 25px;
+      margin-bottom: 25px;
+
+      mat-card-content {
+        margin-top: 8px;
+        margin-bottom: 0;
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}

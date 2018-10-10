@@ -13,6 +13,7 @@ import {
   MatIconModule,
   MatProgressBarModule,
   MatProgressSpinnerModule,
+  MatRippleModule,
   MatSnackBarModule,
   MatToolbarModule
 } from '@angular/material';
@@ -24,20 +25,22 @@ import {ThemeTestComponent} from './components/theme-test/theme-test.component';
 import {ToolbarComponent} from './components/toolbar/toolbar.component';
 import {FooterComponent} from './components/footer/footer.component';
 import {HomeComponent} from './components/home/home.component';
+import {DashboardComponent} from './components/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ThemeTestComponent,
+    ThemeTestComponent, // TODO: DELETE FOR PRODUCTION
     ToolbarComponent,
     FooterComponent,
-    HomeComponent // TODO: DELETE FOR PRODUCTION
+    HomeComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatButtonModule, MatChipsModule, MatProgressBarModule, MatProgressSpinnerModule, MatToolbarModule, MatCardModule, MatButtonToggleModule, MatDialogModule, MatSnackBarModule, MatIconModule, AppRoutingModule
+    MatButtonModule, MatRippleModule, MatChipsModule, MatProgressBarModule, MatProgressSpinnerModule, MatToolbarModule, MatCardModule, MatButtonToggleModule, MatDialogModule, MatSnackBarModule, MatIconModule, AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
