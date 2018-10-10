@@ -14,10 +14,12 @@
     </div>
   </div>
   <div class="toolbar-section">
-    <button *ngIf="!loggedIn" mat-stroked-button color="primary" (click)="login()">Login</button>
-    <div *ngIf="loggedIn">
-      <span class="mat-body-1" style="margin-right: 15px;">{{ username }}</span>
-      <button mat-button color="primary" (click)="login()">Logout</button>
+    <button *ngIf="accountService.account === undefined" mat-stroked-button color="primary" (click)="login()">
+      Login
+    </button>
+    <div *ngIf="accountService.account !== undefined">
+      <span class="mat-body-1" style="margin-right: 15px;">{{ accountService.account.username }}</span>
+      <button mat-button color="primary" (click)="logout()">Logout</button>
     </div>
   </div>
 </mat-toolbar>

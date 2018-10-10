@@ -1,11 +1,11 @@
 export class ProjectOverview {
   public name: string;
   public iconURL: string;
-  public projectId: string;
+  public id: string;
 
-  constructor(name: string, iconURL: string, projectId: string) {
+  constructor(name: string, iconURL: string, id: string) {
     this.name = name;
     this.iconURL = iconURL;
-    this.projectId = projectId;
+    this.id = id;
   }
 }

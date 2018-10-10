@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Paths} from '../../models/paths.enum';
+import {AccountService} from '../../services/account.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-toolbar',
@@ -8,18 +10,30 @@ import {Paths} from '../../models/paths.enum';
 })
 export class ToolbarComponent implements OnInit {
   curPath: Paths = Paths.HOME;
-  loggedIn = false;
-  username = 'Username';
   projectName = 'ProjectName';
   commandName = 'CommandName';
 
-  constructor() {
+  constructor(public accountService: AccountService,
+              private router: Router) {
   }
 
   ngOnInit() {
   }
 
   login() {
-    // TODO: Discord OAuth2
+    this.accountService.login().subscribe(loggedIn => {
+      if (loggedIn) {
+        console.log('Logged in!');
+        this.router.navigateByUrl('dashboard');
+      } else {
+        console.warn('Error while logging in!');
+      }
+    });
+  }
+
+  logout() {
+    // TODO: Logout
+    this.accountService.account = undefined;
+    this.router.navigateByUrl('home');
   }
 }

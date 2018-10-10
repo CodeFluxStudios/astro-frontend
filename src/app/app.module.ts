@@ -2,6 +2,8 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 
 import {AppComponent} from './app.component';
+import {HttpClientInMemoryWebApiModule} from 'angular-in-memory-web-api';
+import {InMemoryDataService} from './in-memory-data.service';
 import {HttpClientModule} from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {
@@ -30,7 +32,7 @@ import {DashboardComponent} from './components/dashboard/dashboard.component';
 @NgModule({
   declarations: [
     AppComponent,
-    ThemeTestComponent, // TODO: DELETE FOR PRODUCTION
+    ThemeTestComponent, // TODO: REMOVE FOR PRODUCTION
     ToolbarComponent,
     FooterComponent,
     HomeComponent,
@@ -39,6 +41,12 @@ import {DashboardComponent} from './components/dashboard/dashboard.component';
   imports: [
     BrowserModule,
     HttpClientModule,
+    // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
+    // and returns simulated server responses.
+    // TODO: Remove it when a real server is ready to receive requests.
+    HttpClientInMemoryWebApiModule.forRoot(
+      InMemoryDataService, {dataEncapsulation: false}
+    ),
     BrowserAnimationsModule,
     MatButtonModule, MatRippleModule, MatChipsModule, MatProgressBarModule, MatProgressSpinnerModule, MatToolbarModule, MatCardModule, MatButtonToggleModule, MatDialogModule, MatSnackBarModule, MatIconModule, AppRoutingModule
   ],
