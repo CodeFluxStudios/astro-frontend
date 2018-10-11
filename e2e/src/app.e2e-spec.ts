@@ -1,14 +1,18 @@
-import { AppPage } from './app.po';
+import {AppPage} from './app.po';
 
-describe('workspace-project App', () => {
+describe('Home Tests', () => {
   let page: AppPage;
 
   beforeEach(() => {
     page = new AppPage();
+    page.navigateToHome();
   });
 
-  it('should display welcome message', () => {
-    page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Welcome to astro-frontend!');
+  it('should display login button', () => {
+    expect(page.getHomeLoginButtonText()).toEqual('LOGIN');
+  });
+
+  it('should display copyright', () => {
+    expect(page.getFooterCopyright()).toContain('CodeFlux Studios');
   });
 });

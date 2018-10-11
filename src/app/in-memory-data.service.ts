@@ -1,6 +1,6 @@
 import {InMemoryDbService} from 'angular-in-memory-web-api';
-import {ProjectOverview} from './models/project-overview';
-import {Account} from './models/account';
+import {ProjectOverview} from './value-types/project-overview';
+import {Account} from './value-types/account';
 
 export class InMemoryDataService implements InMemoryDbService {
   createDb() {

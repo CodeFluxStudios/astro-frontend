@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Paths} from '../../models/paths.enum';
+import {Paths} from '../../value-types/paths.enum';
 import {AccountService} from '../../services/account.service';
 import {Router} from '@angular/router';
 
