@@ -1,6 +1,15 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
 import {ThemeTestComponent} from './theme-test.component';
+import {
+  MatButtonToggleModule,
+  MatCardModule,
+  MatChipsModule,
+  MatIconModule,
+  MatProgressBarModule,
+  MatProgressSpinnerModule,
+  MatToolbarModule
+} from '@angular/material';
 
 describe('ThemeTestComponent', () => {
   let component: ThemeTestComponent;
@@ -8,7 +17,8 @@ describe('ThemeTestComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ThemeTestComponent]
+      declarations: [ThemeTestComponent],
+      imports: [MatToolbarModule, MatCardModule, MatIconModule, MatButtonToggleModule, MatChipsModule, MatProgressBarModule, MatProgressSpinnerModule]
     })
       .compileComponents();
   }));
