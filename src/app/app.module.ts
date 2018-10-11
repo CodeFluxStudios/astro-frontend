@@ -28,6 +28,7 @@ import {ToolbarComponent} from './components/toolbar/toolbar.component';
 import {FooterComponent} from './components/footer/footer.component';
 import {HomeComponent} from './components/home/home.component';
 import {DashboardComponent} from './components/dashboard/dashboard.component';
+import { ProgressBarComponent } from './components/progress-bar/progress-bar.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import {DashboardComponent} from './components/dashboard/dashboard.component';
     ToolbarComponent,
     FooterComponent,
     HomeComponent,
-    DashboardComponent
+    DashboardComponent,
+    ProgressBarComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +47,7 @@ import {DashboardComponent} from './components/dashboard/dashboard.component';
     // and returns simulated server responses.
     // TODO: Remove it when a real server is ready to receive requests.
     HttpClientInMemoryWebApiModule.forRoot(
-      InMemoryDataService, {dataEncapsulation: false}
+      InMemoryDataService, {dataEncapsulation: false, passThruUnknownUrl: true}
     ),
     BrowserAnimationsModule,
     MatButtonModule, MatRippleModule, MatChipsModule, MatProgressBarModule, MatProgressSpinnerModule, MatToolbarModule, MatCardModule, MatButtonToggleModule, MatDialogModule, MatSnackBarModule, MatIconModule, AppRoutingModule
