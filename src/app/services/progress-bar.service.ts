@@ -4,8 +4,8 @@ import {Injectable} from '@angular/core';
   providedIn: 'root'
 })
 export class ProgressBarService {
-  public isLoading: boolean;
-  public value: number;
+  public isLoading: boolean = true;
+  public value: number = 60;
 
   constructor() {
   }

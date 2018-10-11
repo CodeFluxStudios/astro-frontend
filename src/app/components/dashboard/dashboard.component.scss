@@ -29,6 +29,15 @@ div.layout-container {
     }
   }
 
+  #spinnerContainer {
+    display: flex;
+    justify-content: center;
+
+    mat-spinner {
+      margin-top: 50px;
+    }
+  }
+
   #projectContainer {
     display: flex;
     flex-wrap: wrap;
@@ -39,7 +48,8 @@ div.layout-container {
       max-width: 200px;
       text-align: center;
       padding: 15px;
-      margin-right: 25px;
+      margin-left: 12px;
+      margin-right: 12px;
       margin-bottom: 25px;
 
       mat-card-content {

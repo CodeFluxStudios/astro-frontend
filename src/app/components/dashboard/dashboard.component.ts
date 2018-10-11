@@ -8,6 +8,7 @@ import {ProjectService} from '../../services/project.service';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
+  isLoadingProjects: boolean;
   projects: ProjectOverview[] = [];
 
   constructor(private projectService: ProjectService) {
@@ -18,6 +19,10 @@ export class DashboardComponent implements OnInit {
   }
 
   getProjectOverviews() {
-    this.projectService.getProjectOverviews().subscribe(projectOverviews => this.projects = projectOverviews);
+    this.isLoadingProjects = true;
+    this.projectService.getProjectOverviews().subscribe(projectOverviews => {
+      this.isLoadingProjects = false;
+      this.projects = projectOverviews;
+    });
   }
 }
