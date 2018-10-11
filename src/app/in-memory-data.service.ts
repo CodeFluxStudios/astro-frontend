@@ -18,7 +18,7 @@ export class InMemoryDataService implements InMemoryDbService {
     const commands = [];
 
     const account: Account[] = [
-      new Account('SampleName', 0)
+      new Account('SampleName', 'https://via.placeholder.com/150x150', 0)
     ];
 
     return {projects_overview, projects, commands, account};

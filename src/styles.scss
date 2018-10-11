@@ -40,9 +40,19 @@ body {
     }
   }
 
+  .wrap-text {
+    white-space: normal;
+  }
+
   .truncate-text {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+  }
+
+  .round {
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
   }
 }
