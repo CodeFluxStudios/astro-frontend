@@ -51,6 +51,11 @@ div.layout-container {
       margin-left: 12px;
       margin-right: 12px;
       margin-bottom: 25px;
+      -webkit-transition: box-shadow 0.2s ease-out;
+      -moz-transition: box-shadow 0.2s ease-out;
+      -ms-transition: box-shadow 0.2s ease-out;
+      -o-transition: box-shadow 0.2s ease-out;
+      transition: box-shadow 0.2s ease-out;
 
       mat-card-content {
         margin-top: 8px;
@@ -59,6 +64,9 @@ div.layout-container {
 
       &:hover {
         cursor: pointer;
+        -webkit-box-shadow: 0px 7px 9px -4px rgba(0, 0, 0, 0.2), 0px 14px 21px 2px rgba(0, 0, 0, 0.14), 0px 5px 26px 4px rgba(0, 0, 0, 0.12);
+        -moz-box-shadow: 0px 7px 9px -4px rgba(0, 0, 0, 0.2), 0px 14px 21px 2px rgba(0, 0, 0, 0.14), 0px 5px 26px 4px rgba(0, 0, 0, 0.12);
+        box-shadow: 0px 7px 9px -4px rgba(0, 0, 0, 0.2), 0px 14px 21px 2px rgba(0, 0, 0, 0.14), 0px 5px 26px 4px rgba(0, 0, 0, 0.12);
       }
     }
   }

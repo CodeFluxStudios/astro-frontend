@@ -22,8 +22,6 @@ import {
 
 import {AppRoutingModule} from './app-routing.module';
 
-import {ThemeTestComponent} from './components/theme-test/theme-test.component';
-
 import {ToolbarComponent} from './components/toolbar/toolbar.component';
 import {FooterComponent} from './components/footer/footer.component';
 import {HomeComponent} from './components/home/home.component';
@@ -33,7 +31,6 @@ import {ProgressBarComponent} from './components/progress-bar/progress-bar.compo
 @NgModule({
   declarations: [
     AppComponent,
-    ThemeTestComponent, // TODO: REMOVE FOR PRODUCTION
     ToolbarComponent,
     FooterComponent,
     HomeComponent,
@@ -50,7 +47,18 @@ import {ProgressBarComponent} from './components/progress-bar/progress-bar.compo
       InMemoryDataService, {dataEncapsulation: false, passThruUnknownUrl: true, delay: 3000}
     ),
     BrowserAnimationsModule,
-    MatButtonModule, MatRippleModule, MatChipsModule, MatProgressBarModule, MatProgressSpinnerModule, MatToolbarModule, MatCardModule, MatButtonToggleModule, MatDialogModule, MatSnackBarModule, MatIconModule, AppRoutingModule
+    MatButtonModule,
+    MatRippleModule,
+    MatChipsModule,
+    MatProgressBarModule,
+    MatProgressSpinnerModule,
+    MatToolbarModule,
+    MatCardModule,
+    MatButtonToggleModule,
+    MatDialogModule,
+    MatSnackBarModule,
+    MatIconModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
