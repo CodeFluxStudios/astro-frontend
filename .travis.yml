@@ -2,7 +2,7 @@ language: node_js
 node_js:
   - "8"
 dist: trusty
-sudo: required
+sudo: false
 
 branches:
   only:
@@ -17,6 +17,6 @@ addons:
 
 script:
   - npm run lint
-  - npm run test --headless
-  - npm run build
+  - npm run test:headless
+  - npm run build --prod
   - xvfb-run npm run e2e
