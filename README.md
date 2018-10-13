@@ -1,4 +1,4 @@
-# AstroBot Frontend
+# AstroBot Frontend [![Build Status](https://travis-ci.org/CodeFluxStudios/astro-frontend.svg?branch=master)](https://travis-ci.org/CodeFluxStudios/astro-frontend)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.2.
 
