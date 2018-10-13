@@ -17,6 +17,6 @@ addons:
 
 script:
   - npm run lint
-  - npm run test --watch false -cc
+  - npm run test:headless
   - npm run build
   - xvfb-run npm run e2e
