@@ -18,7 +18,15 @@ describe('ThemeTestComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ThemeTestComponent],
-      imports: [MatToolbarModule, MatCardModule, MatIconModule, MatButtonToggleModule, MatChipsModule, MatProgressBarModule, MatProgressSpinnerModule]
+      imports: [
+        MatToolbarModule,
+        MatCardModule,
+        MatIconModule,
+        MatButtonToggleModule,
+        MatChipsModule,
+        MatProgressBarModule,
+        MatProgressSpinnerModule
+      ]
     })
       .compileComponents();
   }));
