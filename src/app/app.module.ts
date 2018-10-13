@@ -31,7 +31,6 @@ import {ProgressBarComponent} from './components/progress-bar/progress-bar.compo
 @NgModule({
   declarations: [
     AppComponent,
-    // ThemeTestComponent, // TODO: REMOVE FOR PRODUCTION
     ToolbarComponent,
     FooterComponent,
     HomeComponent,
