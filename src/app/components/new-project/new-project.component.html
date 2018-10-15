@@ -5,30 +5,10 @@
     <mat-spinner color="accent" [strokeWidth]="4" [diameter]="50"></mat-spinner>
   </div>
   <mat-selection-list *ngIf="!isLoadingGuilds" (selectionChange)="handleSelection($event)">
-    <mat-list-option>
+    <mat-list-option *ngFor="let guild of guilds">
       <img matListAvatar alt="Guild Logo" class="round"
-           src="https://via.placeholder.com/150x150">
-      <h1 class="mat-title" matLine>Server A</h1>
-    </mat-list-option>
-    <mat-list-option>
-      <img matListAvatar alt="Guild Logo" class="round"
-           src="https://via.placeholder.com/150x150">
-      <h1 class="mat-title" matLine>Server B</h1>
-    </mat-list-option>
-    <mat-list-option>
-      <img matListAvatar alt="Guild Logo" class="round"
-           src="https://via.placeholder.com/150x150">
-      <h1 class="mat-title" matLine>Server C</h1>
-    </mat-list-option>
-    <mat-list-option>
-      <img matListAvatar alt="Guild Logo" class="round"
-           src="https://via.placeholder.com/150x150">
-      <h1 class="mat-title" matLine>Server D</h1>
-    </mat-list-option>
-    <mat-list-option>
-      <img matListAvatar alt="Guild Logo" class="round"
-           src="https://via.placeholder.com/150x150">
-      <h1 class="mat-title" matLine>Server E</h1>
+           src="{{ guild.iconURL }}">
+      <h1 class="mat-title" matLine>{{ guild.name }}</h1>
     </mat-list-option>
   </mat-selection-list>
 </div>

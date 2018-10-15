@@ -22,6 +22,16 @@ export class ProjectService {
       );
   }
 
+
+  /** GET project overviews from the server */
+  getProjectOverviewsOther(): Observable<GuildOverview[]> {
+    return this.http.get<GuildOverview[]>(this.projectBaseUrl + 'projects_overview_other')
+      .pipe(
+        tap(projects => console.log('Fetched project overviews')),
+        catchError(this.handleError('getProjectOverviewsOther', []))
+      );
+  }
+
   /**
    * Handle Http operation that failed.
    * Let the app continue.

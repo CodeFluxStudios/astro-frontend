@@ -13,6 +13,15 @@ export class InMemoryDataService implements InMemoryDbService {
       new GuildOverview('algorithm-archive', 'https://via.placeholder.com/150x150', '5')
     ];
 
+    const projects_overview_other: GuildOverview[] = [
+      new GuildOverview('calculated.gg', 'https://via.placeholder.com/150x150', '6'),
+      new GuildOverview('Reactiflux', 'https://via.placeholder.com/150x150', '7'),
+      new GuildOverview('Aseprite', 'https://via.placeholder.com/150x150', '8'),
+      new GuildOverview('C#', 'https://via.placeholder.com/150x150', '9'),
+      new GuildOverview('Descenders', 'https://via.placeholder.com/150x150', '10'),
+      new GuildOverview('Discord HypeSquad', 'https://via.placeholder.com/150x150', '11')
+    ];
+
     const projects = [];
 
     const commands = [];
@@ -21,6 +30,6 @@ export class InMemoryDataService implements InMemoryDbService {
       new Account('SampleName', 'https://via.placeholder.com/150x150', 0)
     ];
 
-    return {projects_overview, projects, commands, account};
+    return {projects_overview, projects_overview_other, projects, commands, account};
   }
 }

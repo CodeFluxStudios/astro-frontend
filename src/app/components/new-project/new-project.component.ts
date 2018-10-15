@@ -1,6 +1,7 @@
 import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {MatDialogRef} from '@angular/material';
 import {GuildOverview} from '../../value-types/guild-overview';
+import {ProjectService} from '../../services/project.service';
 
 @Component({
   encapsulation: ViewEncapsulation.None,
@@ -14,7 +15,8 @@ export class NewProjectComponent implements OnInit {
   selectedGuild: GuildOverview;
   guilds: GuildOverview[];
 
-  constructor(public dialogRef: MatDialogRef<NewProjectComponent>) {
+  constructor(public dialogRef: MatDialogRef<NewProjectComponent>,
+              private projectService: ProjectService) {
   }
 
   ngOnInit() {
@@ -23,8 +25,10 @@ export class NewProjectComponent implements OnInit {
 
   getGuilds() {
     this.isLoadingGuilds = true;
-    this.guilds = [];
-    this.isLoadingGuilds = false;
+    this.projectService.getProjectOverviews().subscribe(guilds => {
+      this.isLoadingGuilds = false;
+      this.guilds = guilds;
+    });
   }
 
   handleSelection(event) {

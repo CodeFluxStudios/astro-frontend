@@ -49,7 +49,7 @@ import {NewProjectComponent} from './components/new-project/new-project.componen
     // and returns simulated server responses.
     // TODO: Remove it when a real server is ready to receive requests.
     HttpClientInMemoryWebApiModule.forRoot(
-      InMemoryDataService, {dataEncapsulation: false, passThruUnknownUrl: true, delay: 1500}
+      InMemoryDataService, {dataEncapsulation: false, passThruUnknownUrl: true, delay: 1000}
     ),
     BrowserAnimationsModule,
     MatButtonModule,
