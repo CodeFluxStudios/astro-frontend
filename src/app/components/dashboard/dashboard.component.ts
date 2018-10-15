@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {ProjectOverview} from '../../value-types/project-overview';
+import {GuildOverview} from '../../value-types/guild-overview';
 import {ProjectService} from '../../services/project.service';
+import {MatDialog} from '@angular/material';
+import {NewProjectComponent} from '../new-project/new-project.component';
 
 @Component({
   selector: 'app-dashboard',
@@ -9,9 +11,10 @@ import {ProjectService} from '../../services/project.service';
 })
 export class DashboardComponent implements OnInit {
   isLoadingProjects: boolean;
-  projects: ProjectOverview[] = [];
+  projects: GuildOverview[] = [];
 
-  constructor(private projectService: ProjectService) {
+  constructor(private projectService: ProjectService,
+              public dialog: MatDialog) {
   }
 
   ngOnInit() {
@@ -23,6 +26,15 @@ export class DashboardComponent implements OnInit {
     this.projectService.getProjectOverviews().subscribe(projectOverviews => {
       this.isLoadingProjects = false;
       this.projects = projectOverviews;
+    });
+  }
+
+  newProject() {
+    const dialogRef = this.dialog.open(NewProjectComponent, {
+      width: '400px',
+      autoFocus: false,
+      closeOnNavigation: true,
+      disableClose: true
     });
   }
 }

@@ -1,19 +1,19 @@
 <div class="layout-container">
   <div id="headline">
     <h2 class="mat-display-1">Your Projects</h2>
-    <button mat-button color="primary">
+    <button mat-button color="primary" (click)="newProject()">
       <mat-icon>add</mat-icon>
-      <span>Add Astro to your Server</span>
+      <span>Add Astro to your Guild</span>
     </button>
   </div>
 
   <div id="spinnerContainer" *ngIf="isLoadingProjects">
-    <mat-spinner color="accent" strokeWidth="4"></mat-spinner>
+    <mat-spinner color="accent" [strokeWidth]="6"></mat-spinner>
   </div>
 
   <div id="projectContainer">
     <mat-card *ngFor="let project of projects" mat-ripple class="project-card mat-elevation-z4">
-      <img width="50" alt="Project Logo" class="round"
+      <img width="50" alt="Guild Logo" class="round"
            src="{{project.iconURL}}">
       <mat-card-content>
         <h2 class="mat-title truncate-text">{{project.name}}</h2>

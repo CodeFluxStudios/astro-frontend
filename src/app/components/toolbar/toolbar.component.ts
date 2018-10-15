@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {Paths} from '../../value-types/paths.enum';
 import {AccountService} from '../../services/account.service';
 import {Router} from '@angular/router';
 
@@ -9,12 +8,11 @@ import {Router} from '@angular/router';
   styleUrls: ['./toolbar.component.scss']
 })
 export class ToolbarComponent implements OnInit {
-  curPath: Paths = Paths.HOME;
   projectName = 'ProjectName';
   commandName = 'CommandName';
 
   constructor(public accountService: AccountService,
-              private router: Router) {
+              public router: Router) {
   }
 
   ngOnInit() {

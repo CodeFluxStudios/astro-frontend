@@ -1,0 +1,44 @@
+<h1 mat-dialog-title>Add Astro to your Guild</h1>
+<div mat-dialog-content>
+  <h3 class="mat-subheading-2">Select your Guild:</h3>
+  <div *ngIf="isLoadingGuilds" id="loadingGuildsContainer">
+    <mat-spinner color="accent" [strokeWidth]="4" [diameter]="50"></mat-spinner>
+  </div>
+  <mat-selection-list *ngIf="!isLoadingGuilds" (selectionChange)="handleSelection($event)">
+    <mat-list-option>
+      <img matListAvatar alt="Guild Logo" class="round"
+           src="https://via.placeholder.com/150x150">
+      <h1 class="mat-title" matLine>Server A</h1>
+    </mat-list-option>
+    <mat-list-option>
+      <img matListAvatar alt="Guild Logo" class="round"
+           src="https://via.placeholder.com/150x150">
+      <h1 class="mat-title" matLine>Server B</h1>
+    </mat-list-option>
+    <mat-list-option>
+      <img matListAvatar alt="Guild Logo" class="round"
+           src="https://via.placeholder.com/150x150">
+      <h1 class="mat-title" matLine>Server C</h1>
+    </mat-list-option>
+    <mat-list-option>
+      <img matListAvatar alt="Guild Logo" class="round"
+           src="https://via.placeholder.com/150x150">
+      <h1 class="mat-title" matLine>Server D</h1>
+    </mat-list-option>
+    <mat-list-option>
+      <img matListAvatar alt="Guild Logo" class="round"
+           src="https://via.placeholder.com/150x150">
+      <h1 class="mat-title" matLine>Server E</h1>
+    </mat-list-option>
+  </mat-selection-list>
+</div>
+<div mat-dialog-actions>
+  <button mat-button mat-dialog-close>Close</button>
+  <button id="addAstroButton" mat-button color="primary" [disabled]="selectedGuild === undefined" (click)="addAstro()">
+    <span *ngIf="isAddingAstro" id="spinnerContainer">
+      <mat-spinner [diameter]="20"></mat-spinner>
+    </span>
+    <span *ngIf="!isAddingAstro">Add Astro</span>
+    <span *ngIf="isAddingAstro">Adding Astro</span>
+  </button>
+</div>

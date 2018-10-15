@@ -1,4 +1,4 @@
-export class ProjectOverview {
+export class GuildOverview {
   public name: string;
   public iconURL: string;
   public id: string;

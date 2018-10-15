@@ -8,6 +8,10 @@ body {
   margin: 0;
   font-family: 'Roboto', sans-serif;
 
+  .mat-dialog-actions {
+    justify-content: flex-end;
+  }
+
   .layout-container {
     width: 100%;
     padding-right: 15px;

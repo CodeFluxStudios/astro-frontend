@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Observable, of} from 'rxjs';
-import {ProjectOverview} from '../value-types/project-overview';
+import {GuildOverview} from '../value-types/guild-overview';
 import {HttpClient} from '@angular/common/http';
 import {catchError, tap} from 'rxjs/operators';
 
@@ -14,8 +14,8 @@ export class ProjectService {
   }
 
   /** GET project overviews from the server */
-  getProjectOverviews(): Observable<ProjectOverview[]> {
-    return this.http.get<ProjectOverview[]>(this.projectBaseUrl + 'projects_overview')
+  getProjectOverviews(): Observable<GuildOverview[]> {
+    return this.http.get<GuildOverview[]>(this.projectBaseUrl + 'projects_overview')
       .pipe(
         tap(projects => console.log('Fetched project overviews')),
         catchError(this.handleError('getProjectOverviews', []))

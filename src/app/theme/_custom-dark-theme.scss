@@ -12,7 +12,7 @@ $custom-theme-background: (
   background: map-get($custom-dark-palette, 800),
   hover: rgba(white, 0.04),
   card: map-get($custom-dark-palette, 700),
-  dialog: map-get($custom-dark-palette, 900),
+  dialog: map-get($custom-dark-palette, 700),
   disabled-button: rgba(white, 0.12),
   raised-button: map-get($custom-dark-palette, 700),
   focused-button: $light-focused,

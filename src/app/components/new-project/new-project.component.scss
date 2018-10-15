@@ -1,0 +1,21 @@
+#loadingGuildsContainer {
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h3.mat-subheading-2 {
+  margin-bottom: 0;
+}
+
+#addAstroButton {
+  .mat-button-wrapper {
+    display: flex;
+    align-items: center;
+
+    span#spinnerContainer {
+      margin-right: 8px;
+    }
+  }
+}

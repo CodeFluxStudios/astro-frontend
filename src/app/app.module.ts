@@ -12,7 +12,10 @@ import {
   MatCardModule,
   MatChipsModule,
   MatDialogModule,
+  MatFormFieldModule,
   MatIconModule,
+  MatInputModule,
+  MatListModule,
   MatProgressBarModule,
   MatProgressSpinnerModule,
   MatRippleModule,
@@ -27,6 +30,7 @@ import {FooterComponent} from './components/footer/footer.component';
 import {HomeComponent} from './components/home/home.component';
 import {DashboardComponent} from './components/dashboard/dashboard.component';
 import {ProgressBarComponent} from './components/progress-bar/progress-bar.component';
+import {NewProjectComponent} from './components/new-project/new-project.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +39,8 @@ import {ProgressBarComponent} from './components/progress-bar/progress-bar.compo
     FooterComponent,
     HomeComponent,
     DashboardComponent,
-    ProgressBarComponent
+    ProgressBarComponent,
+    NewProjectComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +49,7 @@ import {ProgressBarComponent} from './components/progress-bar/progress-bar.compo
     // and returns simulated server responses.
     // TODO: Remove it when a real server is ready to receive requests.
     HttpClientInMemoryWebApiModule.forRoot(
-      InMemoryDataService, {dataEncapsulation: false, passThruUnknownUrl: true, delay: 3000}
+      InMemoryDataService, {dataEncapsulation: false, passThruUnknownUrl: true, delay: 1500}
     ),
     BrowserAnimationsModule,
     MatButtonModule,
@@ -53,7 +58,10 @@ import {ProgressBarComponent} from './components/progress-bar/progress-bar.compo
     MatProgressBarModule,
     MatProgressSpinnerModule,
     MatToolbarModule,
+    MatListModule,
     MatCardModule,
+    MatFormFieldModule,
+    MatInputModule,
     MatButtonToggleModule,
     MatDialogModule,
     MatSnackBarModule,
@@ -61,6 +69,7 @@ import {ProgressBarComponent} from './components/progress-bar/progress-bar.compo
     AppRoutingModule
   ],
   providers: [],
+  entryComponents: [NewProjectComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule {
