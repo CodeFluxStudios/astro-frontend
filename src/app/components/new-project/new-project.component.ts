@@ -1,5 +1,4 @@
 import {Component, OnInit, ViewEncapsulation} from '@angular/core';
-import {MatDialogRef} from '@angular/material';
 import {GuildOverview} from '../../value-types/guild-overview';
 import {ProjectService} from '../../services/project.service';
 
@@ -15,8 +14,7 @@ export class NewProjectComponent implements OnInit {
   selectedGuild: GuildOverview;
   guilds: GuildOverview[];
 
-  constructor(public dialogRef: MatDialogRef<NewProjectComponent>,
-              private projectService: ProjectService) {
+  constructor(private projectService: ProjectService) {
   }
 
   ngOnInit() {

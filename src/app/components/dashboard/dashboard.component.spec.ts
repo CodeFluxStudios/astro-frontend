@@ -1,7 +1,7 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
 import {DashboardComponent} from './dashboard.component';
-import {MatCardModule, MatIconModule, MatProgressSpinnerModule} from '@angular/material';
+import {MatCardModule, MatDialogModule, MatIconModule, MatProgressSpinnerModule} from '@angular/material';
 import {HttpClientModule} from '@angular/common/http';
 
 describe('DashboardComponent', () => {
@@ -11,7 +11,13 @@ describe('DashboardComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [DashboardComponent],
-      imports: [MatIconModule, MatProgressSpinnerModule, MatCardModule, HttpClientModule]
+      imports: [
+        MatIconModule,
+        MatProgressSpinnerModule,
+        MatCardModule,
+        HttpClientModule,
+        MatDialogModule
+      ]
     })
       .compileComponents();
   }));
