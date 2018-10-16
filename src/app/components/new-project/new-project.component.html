@@ -7,7 +7,8 @@
   <mat-selection-list *ngIf="!isLoadingGuilds" (selectionChange)="handleSelection($event)">
     <mat-list-option *ngFor="let guild of guilds">
       <img matListAvatar alt="Guild Logo" class="round"
-           src="{{ guild.iconURL }}">
+           src="{{ guild.iconURL }}"
+           onerror="this.onerror=null;this.src = '../assets/question-mark-placeholder.png';">
       <h1 class="mat-title" matLine>{{ guild.name }}</h1>
     </mat-list-option>
   </mat-selection-list>

@@ -27,7 +27,7 @@ export class ProjectService {
   getProjectOverviewsOther(): Observable<GuildOverview[]> {
     return this.http.get<GuildOverview[]>(this.projectBaseUrl + 'projects_overview_other')
       .pipe(
-        tap(projects => console.log('Fetched project overviews')),
+        tap(projects => console.log('Fetched project overviews other')),
         catchError(this.handleError('getProjectOverviewsOther', []))
       );
   }

@@ -23,7 +23,7 @@ export class NewProjectComponent implements OnInit {
 
   getGuilds() {
     this.isLoadingGuilds = true;
-    this.projectService.getProjectOverviews().subscribe(guilds => {
+    this.projectService.getProjectOverviewsOther().subscribe(guilds => {
       this.isLoadingGuilds = false;
       this.guilds = guilds;
     });
