@@ -31,8 +31,8 @@ import {HomeComponent} from './components/home/home.component';
 import {DashboardComponent} from './components/dashboard/dashboard.component';
 import {ProgressBarComponent} from './components/progress-bar/progress-bar.component';
 import {NewProjectComponent} from './components/new-project/new-project.component';
-import { ProjectOverviewComponent } from './components/project-overview/project-overview.component';
-import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import {ProjectOverviewComponent} from './components/project-overview/project-overview.component';
+import {PageNotFoundComponent} from './components/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [

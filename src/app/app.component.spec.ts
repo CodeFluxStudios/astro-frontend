@@ -4,7 +4,7 @@ import {ProgressBarComponent} from './components/progress-bar/progress-bar.compo
 import {ToolbarComponent} from './components/toolbar/toolbar.component';
 import {FooterComponent} from './components/footer/footer.component';
 import {RouterTestingModule} from '@angular/router/testing';
-import {MatIconModule, MatProgressBarModule, MatToolbarModule} from '@angular/material';
+import {MatCardModule, MatIconModule, MatProgressBarModule, MatToolbarModule} from '@angular/material';
 import {HttpClientModule} from '@angular/common/http';
 
 describe('AppComponent', () => {
@@ -18,7 +18,11 @@ describe('AppComponent', () => {
       ],
       imports: [
         RouterTestingModule,
-        MatProgressBarModule, MatToolbarModule, MatIconModule, HttpClientModule
+        MatProgressBarModule,
+        MatToolbarModule,
+        MatIconModule,
+        HttpClientModule,
+        MatCardModule
       ]
     }).compileComponents();
   }));
