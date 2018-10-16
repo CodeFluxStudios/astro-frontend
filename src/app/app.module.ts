@@ -7,6 +7,7 @@ import {InMemoryDataService} from './in-memory-data.service';
 import {HttpClientModule} from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {
+  MatAutocompleteModule,
   MatButtonModule,
   MatButtonToggleModule,
   MatCardModule,
@@ -24,6 +25,7 @@ import {
 } from '@angular/material';
 
 import {AppRoutingModule} from './app-routing.module';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import {ToolbarComponent} from './components/toolbar/toolbar.component';
 import {FooterComponent} from './components/footer/footer.component';
@@ -49,6 +51,8 @@ import {PageNotFoundComponent} from './components/page-not-found/page-not-found.
   imports: [
     BrowserModule,
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
     // and returns simulated server responses.
     // TODO: Remove it when a real server is ready to receive requests.
@@ -65,6 +69,7 @@ import {PageNotFoundComponent} from './components/page-not-found/page-not-found.
     MatListModule,
     MatCardModule,
     MatFormFieldModule,
+    MatAutocompleteModule,
     MatInputModule,
     MatButtonToggleModule,
     MatDialogModule,

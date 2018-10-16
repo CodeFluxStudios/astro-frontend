@@ -9,4 +9,67 @@ div.layout-container {
   margin-bottom: 50px;
   display: flex;
   flex-direction: column;
+
+  .headline {
+    display: flex;
+    margin-bottom: 8px;
+    justify-content: space-between;
+
+    div {
+      display: flex;
+      align-items: center;
+
+      #searchCommands {
+        width: 300px;
+      }
+    }
+
+    button#newCommandButton {
+      font-size: 18px;
+      padding-left: 8px;
+      mat-icon {
+        font-size: 35px;
+        width: 35px;
+        height: 35px;
+        margin-right: 8px;
+      }
+    }
+
+    h1.mat-display-1 {
+      margin: 0;
+      margin-right: 25px;
+    }
+  }
+
+  #commandContainer {
+    display: flex;
+    flex-wrap: wrap;
+
+    .command-card {
+      min-width: 175px;
+      width: 175px;
+      max-width: 175px;
+      text-align: center;
+      padding: 15px;
+      margin-left: 12px;
+      margin-right: 12px;
+      margin-bottom: 32px;
+      -webkit-transition: box-shadow 0.2s ease-out;
+      -moz-transition: box-shadow 0.2s ease-out;
+      -ms-transition: box-shadow 0.2s ease-out;
+      -o-transition: box-shadow 0.2s ease-out;
+      transition: box-shadow 0.2s ease-out;
+
+      mat-card-content {
+        margin: 0;
+      }
+
+      &:hover {
+        cursor: pointer;
+        -webkit-box-shadow: 0px 7px 9px -4px rgba(0, 0, 0, 0.2), 0px 14px 21px 2px rgba(0, 0, 0, 0.14), 0px 5px 26px 4px rgba(0, 0, 0, 0.12);
+        -moz-box-shadow: 0px 7px 9px -4px rgba(0, 0, 0, 0.2), 0px 14px 21px 2px rgba(0, 0, 0, 0.14), 0px 5px 26px 4px rgba(0, 0, 0, 0.12);
+        box-shadow: 0px 7px 9px -4px rgba(0, 0, 0, 0.2), 0px 14px 21px 2px rgba(0, 0, 0, 0.14), 0px 5px 26px 4px rgba(0, 0, 0, 0.12);
+      }
+    }
+  }
 }
