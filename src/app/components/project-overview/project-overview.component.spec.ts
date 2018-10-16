@@ -1,6 +1,19 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
 import {ProjectOverviewComponent} from './project-overview.component';
+import {
+  MatAutocompleteModule,
+  MatCardModule,
+  MatCheckboxModule,
+  MatChipsModule,
+  MatDividerModule,
+  MatFormFieldModule,
+  MatIconModule,
+  MatSlideToggleModule
+} from '@angular/material';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {ProjectSettingsComponent} from '../project-settings/project-settings.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 describe('ProjectOverviewComponent', () => {
   let component: ProjectOverviewComponent;
@@ -8,7 +21,23 @@ describe('ProjectOverviewComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ProjectOverviewComponent]
+      declarations: [
+        ProjectOverviewComponent,
+        ProjectSettingsComponent
+      ],
+      imports: [
+        MatChipsModule,
+        MatIconModule,
+        FormsModule,
+        ReactiveFormsModule,
+        MatAutocompleteModule,
+        MatFormFieldModule,
+        MatCardModule,
+        MatCheckboxModule,
+        MatSlideToggleModule,
+        MatDividerModule,
+        BrowserAnimationsModule
+      ]
     })
       .compileComponents();
   }));

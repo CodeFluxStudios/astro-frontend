@@ -11,8 +11,10 @@ import {
   MatButtonModule,
   MatButtonToggleModule,
   MatCardModule,
+  MatCheckboxModule,
   MatChipsModule,
   MatDialogModule,
+  MatDividerModule,
   MatFormFieldModule,
   MatIconModule,
   MatInputModule,
@@ -20,6 +22,7 @@ import {
   MatProgressBarModule,
   MatProgressSpinnerModule,
   MatRippleModule,
+  MatSlideToggleModule,
   MatSnackBarModule,
   MatToolbarModule
 } from '@angular/material';
@@ -35,6 +38,7 @@ import {ProgressBarComponent} from './components/progress-bar/progress-bar.compo
 import {NewProjectComponent} from './components/new-project/new-project.component';
 import {ProjectOverviewComponent} from './components/project-overview/project-overview.component';
 import {PageNotFoundComponent} from './components/page-not-found/page-not-found.component';
+import {ProjectSettingsComponent} from './components/project-settings/project-settings.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +50,8 @@ import {PageNotFoundComponent} from './components/page-not-found/page-not-found.
     ProgressBarComponent,
     NewProjectComponent,
     ProjectOverviewComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    ProjectSettingsComponent
   ],
   imports: [
     BrowserModule,
@@ -69,8 +74,11 @@ import {PageNotFoundComponent} from './components/page-not-found/page-not-found.
     MatListModule,
     MatCardModule,
     MatFormFieldModule,
+    MatDividerModule,
     MatAutocompleteModule,
     MatInputModule,
+    MatCheckboxModule,
+    MatSlideToggleModule,
     MatButtonToggleModule,
     MatDialogModule,
     MatSnackBarModule,

@@ -1,0 +1,45 @@
+div#settingsContainer {
+  display: flex;
+  flex-wrap: wrap;
+
+  div.column {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+
+    .setting-container {
+      padding: 0 15px;
+
+      mat-card.setting {
+        background: transparent;
+        -webkit-box-shadow: 0 0 0;
+        -moz-box-shadow: 0 0 0;
+        box-shadow: 0 0 0;
+        padding: 16px 24px;
+        width: 400px;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 8px;
+        cursor: pointer;
+
+        .setting-header {
+          display: flex;
+          justify-content: space-between;
+
+          h3.mat-subheading-2 {
+            margin-bottom: 0;
+          }
+        }
+
+        .setting-body.mat-caption {
+          color: rgba(255, 255, 255, 0.5);
+        }
+      }
+    }
+
+    mat-divider {
+      margin-bottom: 15px;
+      width: 475px;
+    }
+  }
+}

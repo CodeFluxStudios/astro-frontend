@@ -12,8 +12,12 @@ div.layout-container {
 
   .headline {
     display: flex;
-    margin-bottom: 8px;
+    margin-bottom: 28px;
     justify-content: space-between;
+
+    &#commandHeadline {
+      margin-bottom: 8px;
+    }
 
     div {
       display: flex;
@@ -39,6 +43,10 @@ div.layout-container {
       margin: 0;
       margin-right: 25px;
     }
+  }
+
+  .content {
+    margin-bottom: 32px;
   }
 
   #commandContainer {
