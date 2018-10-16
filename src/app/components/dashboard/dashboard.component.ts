@@ -3,6 +3,7 @@ import {GuildOverview} from '../../value-types/guild-overview';
 import {ProjectService} from '../../services/project.service';
 import {MatDialog} from '@angular/material';
 import {NewProjectComponent} from '../new-project/new-project.component';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -14,7 +15,8 @@ export class DashboardComponent implements OnInit {
   projects: GuildOverview[] = [];
 
   constructor(private projectService: ProjectService,
-              public dialog: MatDialog) {
+              public dialog: MatDialog,
+              private router: Router) {
   }
 
   ngOnInit() {
@@ -36,5 +38,10 @@ export class DashboardComponent implements OnInit {
       closeOnNavigation: true,
       disableClose: true
     });
+  }
+
+  showProject(project: GuildOverview) {
+    this.projectService.curProject = project;
+    this.router.navigateByUrl(`project/${project.id}`);
   }
 }

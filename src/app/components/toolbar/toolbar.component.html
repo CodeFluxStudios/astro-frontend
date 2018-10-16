@@ -9,10 +9,10 @@
   <div class="toolbar-section">
     <span *ngIf="router.url === '/home'" class="mat-headline">AstroBot</span>
     <span *ngIf="router.url === '/dashboard'" class="mat-headline">Dashboard</span>
-    <span *ngIf="router.url.includes('/project/')" class="mat-headline">{{ projectName }}</span>
+    <span *ngIf="router.url.includes('/project/')" class="mat-headline">{{ projectService.curProject.name }}</span>
     <div *ngIf="router.url.includes('/command')" id="commandDetails">
-      <span class="mat-headline">{{ commandName }}</span>
-      <span class="mat-caption">{{ projectName }}</span>
+      <span class="mat-headline">{{ commandService.curCommand }}</span>
+      <span class="mat-caption">{{ projectService.curProject.name }}</span>
     </div>
     <span *ngIf="router.url === '/page-not-found'" class="mat-headline">Error: 404</span>
   </div>

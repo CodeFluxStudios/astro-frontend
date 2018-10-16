@@ -12,7 +12,8 @@
   </div>
 
   <div id="projectContainer">
-    <mat-card *ngFor="let project of projects" mat-ripple class="project-card mat-elevation-z4">
+    <mat-card *ngFor="let project of projects" mat-ripple class="project-card mat-elevation-z4"
+              (click)="showProject(project)">
       <img width="50" alt="Guild Logo" class="round"
            src="{{project.iconURL}}"
            onerror="this.onerror=null;this.src = '../assets/question-mark-placeholder.png';">

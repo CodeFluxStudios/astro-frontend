@@ -8,6 +8,7 @@ import {catchError, tap} from 'rxjs/operators';
   providedIn: 'root'
 })
 export class ProjectService {
+  public curProject: GuildOverview;
   private projectBaseUrl = 'api/';
 
   constructor(private http: HttpClient) {

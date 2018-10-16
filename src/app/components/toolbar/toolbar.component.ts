@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {AccountService} from '../../services/account.service';
 import {Router} from '@angular/router';
+import {ProjectService} from '../../services/project.service';
+import {CommandService} from '../../services/command.service';
 
 @Component({
   selector: 'app-toolbar',
@@ -8,10 +10,9 @@ import {Router} from '@angular/router';
   styleUrls: ['./toolbar.component.scss']
 })
 export class ToolbarComponent implements OnInit {
-  projectName = 'ProjectName';
-  commandName = 'CommandName';
-
   constructor(public accountService: AccountService,
+              public projectService: ProjectService,
+              public commandService: CommandService,
               public router: Router) {
   }
 

@@ -5,6 +5,8 @@ import {Injectable} from '@angular/core';
 })
 export class CommandService {
 
+  public curCommand: any;
+
   constructor() {
   }
 }
