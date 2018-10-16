@@ -8,4 +8,5 @@ body {
   @include angular-material-theme($custom-theme);
 
   @import "custom-elements/snackbar-theme";
+  @import "custom-elements/hyperlink-theme";
 }

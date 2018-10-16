@@ -14,7 +14,27 @@ mat-toolbar {
 
     &:first-child {
       justify-content: flex-start;
+      align-items: stretch;
       padding: 0;
+
+      #homeSection {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        -webkit-box-shadow: 0 0 0 !important;
+        -moz-box-shadow: 0 0 0 !important;
+        box-shadow: 0 0 0 !important;
+        background: transparent;
+        color: inherit;
+        padding: 0 15px;
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        border-radius: 0;
+
+        &:hover {
+          background-color: rgba(255, 255, 255, 0.08);
+        }
+      }
     }
 
     &:last-child {
