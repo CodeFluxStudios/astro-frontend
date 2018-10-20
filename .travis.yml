@@ -1,22 +1,22 @@
 language: node_js
 node_js:
-  - "8"
+- '8'
 dist: trusty
 sudo: false
-
 branches:
   only:
   - master
-
 cache:
   directories:
-    - node_modules
-
+  - node_modules
 addons:
   chrome: stable
-
 script:
-  - npm run lint
-  - npm run test:headless
-  - npm run build --prod
-  - xvfb-run npm run e2e
+- npm run lint
+- npm run test:headless
+- npm run build
+- xvfb-run npm run e2e
+deploy:
+  provider: heroku
+  api_key:
+    secure: gomITuDd9ggQIYbM4IHHBdg2ieHun5rtttjYbLh9/P+rd4rG5Q+72BpoY+8+818VStz/vF9qGvqpnaMLVcgOLW/DXtGwsxQMfL+A3dYUYCNR3jktYJPYGf9H8DcHRwKoq0KNLsgyX1RqPlHMIL/t+pgE+REvc600Z7EGZP6Vr+030rtLIbLepZWR1LCtszJu0t2WvllT0x4dzrAapr7AU2yp3SygqLU/La+QBss1CR7UbhUWBkzORC40V9qO9o1Qj34tKOkUg8p/awGRn4xSA3SsyR3+A8r/CwxIyJwZr37GgokqDNjiQnnoSNc9h6uh8tsfZcCMXWN6Kskq/owEU881T4tl/gU8k6VGWP5EFaAE+48WT0peWBx9U6xc814jnYZ2TMZMIeMe/LY/3XwirNhUuN4iyLAMGYpp31zpN4NkcwUeBCRjFodX4BqOJZQqIMvXgjT0brnOHQYqEnpeKmH6TJt28JXV3fzXel8aux8lZZUFNB4xW9nc6pD5uw3pM1v9aUXvcPXmwOxcoq/E1Nf+JOeytoB4BrmNkT3b3YagwSMVMNGocCIvfJEaLvc2/jxpY8UMiJ5g/vaf/cfCCdTymcYkdrIU8pOEmzVruYKTY1Q0D2ow2WUZoBwIQdvXmiptOFE+k3SifwabZ8F4JFMIPovrxD6BSwMmRBM/pYI=
