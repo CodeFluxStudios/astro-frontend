@@ -18,5 +18,10 @@ addons:
 script:
   - npm run lint
   - npm run test:headless
-  - npm run build --prod
+  - npm run build
   - xvfb-run npm run e2e
+
+deploy:
+  provider: heroku
+  api_key:
+    secure: "ydMhDR0sxIQZZXQ5iz9hmIIlgfIyMZkg9Uh6hrFMVTF6wqKQNNcAt4VNPkaTPgMblfikyrZQBackXGZXqhcWlyHf0tmsPnbvzE4WBcAfdWnFXA0WCXsGSvt3YSWjSWGnVDlb1u/430EiPPhavx/v744eqiyucFjDrPtLo+GnSYsLAcATBpj9wLHktqyYf9afMSVEZjYSCN2qWm4p7WXPSczTRj5yx/bzR9l5B9HrnQJ13xjmdcoLkpO/aLUFpViNK0ADAkbEsN9pnePT+75iardSS+/F5IciHLJS7l5xJhxq8Awyar4l2XBgJhjpefj/1ySUES/QV+0cvEJEhqDSaLPmvuSApULVz6ocWn6zZLNTZN7NvpAMu8n7ipFfMWT9YdXxEDXrlY1v1LurZcxSzoejKbanCabnnChPSEeTRKHKwt0JRve14MOA5psK5LLwurpskTzrHYep4eypyMYX4X+oEcEKwdpGbhfXo1Ghl9HQL92KCTL0iDEIN3cePLndcZcC/CMXMMS57BZmrH1S2K4AxJtmq/+9pWDXfmlG7ECA0eWq02U1qrwheyGUQoLWFqB2mDXVQUOFE6GltrgAAwSx8q5aSZ6bOS6KsA12CkUToMWqNbdLn0n48kz3v2atOx0ywZIThWLZejwPq1ESTeOt46Zue9+r/kZgPmkYe+U="
