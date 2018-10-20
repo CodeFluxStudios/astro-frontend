@@ -5,7 +5,7 @@ node_js:
 
 dist: trusty
 
-sudo: required
+sudo: false
 
 branches:
   only:
@@ -18,13 +18,10 @@ cache:
 addons:
   chrome: stable
 
-before_script:
-- npm install -g @angular/cli
-
 script:
 - npm run lint
 - npm run test:headless
-- npm run build
+- npm run build --prod
 - xvfb-run npm run e2e
 
 deploy:
