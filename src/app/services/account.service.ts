@@ -1,31 +1,35 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable, of} from 'rxjs';
-import {catchError, map} from 'rxjs/operators';
 import {Account} from '../value-types/account';
+import {Router} from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AccountService {
   public account: Account = undefined;
-  private accountUrl = 'api/account';
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private router: Router) {
+    window.addEventListener('message', (event) => {
+      console.log(event);
+
+      if (event.origin !== 'http://lvh.me:5000') {
+        return;
+      }
+
+      if (event.data.username !== undefined) {
+        this.account = new Account();
+        this.account.loadAccountData(event.data);
+        this.router.navigateByUrl('dashboard');
+      }
+    }, false);
   }
 
-  /** TODO: Discord OAuth2 */
-  login(): Observable<boolean> {
-    return this.http.get<boolean>(this.accountUrl + '/0')
-      .pipe(
-        map((a: Account) => {
-          this.account = a;
-          console.log('Account is:');
-          console.log(a);
-          return a;
-        }),
-        catchError(this.handleError('login', undefined))
-      );
+  login(): void {
+    console.log('login');
+    const loginWindow = window.open('http://localhost:5000/login', '_blank', 'height=720,width=500');
+    loginWindow.focus();
   }
 
   /**

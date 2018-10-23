@@ -1,6 +1,5 @@
 import {InMemoryDbService} from 'angular-in-memory-web-api';
 import {GuildOverview} from './value-types/guild-overview';
-import {Account} from './value-types/account';
 
 export class InMemoryDataService implements InMemoryDbService {
   createDb() {
@@ -26,10 +25,6 @@ export class InMemoryDataService implements InMemoryDbService {
 
     const commands = [];
 
-    const account: Account[] = [
-      new Account('SampleName', 'https://via.placeholder.com/150x150', 0)
-    ];
-
-    return {projects_overview, projects_overview_other, projects, commands, account};
+    return {projects_overview, projects_overview_other, projects, commands};
   }
 }

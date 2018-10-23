@@ -17,13 +17,6 @@ export class HomeComponent implements OnInit {
   }
 
   login() {
-    this.accountService.login().subscribe(loggedIn => {
-      if (loggedIn) {
-        console.log('Logged in!');
-        this.router.navigateByUrl('dashboard');
-      } else {
-        console.warn('Error while logging in!');
-      }
-    });
+    this.accountService.login();
   }
 }
