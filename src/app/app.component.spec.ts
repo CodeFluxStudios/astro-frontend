@@ -1,8 +1,8 @@
 import {async, TestBed} from '@angular/core/testing';
 import {AppComponent} from './app.component';
-import {ProgressBarComponent} from './components/progress-bar/progress-bar.component';
-import {ToolbarComponent} from './components/toolbar/toolbar.component';
-import {FooterComponent} from './components/footer/footer.component';
+import {ProgressBarComponent} from './components/main/progress-bar/progress-bar.component';
+import {ToolbarComponent} from './components/main/toolbar/toolbar.component';
+import {FooterComponent} from './components/main/footer/footer.component';
 import {RouterTestingModule} from '@angular/router/testing';
 import {MatCardModule, MatIconModule, MatProgressBarModule, MatToolbarModule} from '@angular/material';
 import {HttpClientModule} from '@angular/common/http';

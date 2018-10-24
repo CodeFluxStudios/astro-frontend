@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {AccountService} from '../../services/account.service';
+import {AccountService} from '../../../services/account.service';
 import {Router} from '@angular/router';
-import {ProjectService} from '../../services/project.service';
-import {CommandService} from '../../services/command.service';
+import {GuildService} from '../../../services/guild.service';
+import {CommandService} from '../../../services/command.service';
 
 @Component({
   selector: 'app-toolbar',
@@ -11,7 +11,7 @@ import {CommandService} from '../../services/command.service';
 })
 export class ToolbarComponent implements OnInit {
   constructor(public accountService: AccountService,
-              public projectService: ProjectService,
+              public guildService: GuildService,
               public commandService: CommandService,
               public router: Router) {
   }

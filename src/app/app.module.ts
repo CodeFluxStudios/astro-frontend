@@ -29,16 +29,21 @@ import {
 
 import {AppRoutingModule} from './app-routing.module';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+// Main
+import {ToolbarComponent} from './components/main/toolbar/toolbar.component';
+import {FooterComponent} from './components/main/footer/footer.component';
+import {ProgressBarComponent} from './components/main/progress-bar/progress-bar.component';
+import {PageNotFoundComponent} from './components/main/page-not-found/page-not-found.component';
+// Home
+import {HomeComponent} from './components/home/home/home.component';
+// Dashboard
+import {DashboardComponent} from './components/dashboard/dashboard/dashboard.component';
+// Guild
+import {NewGuildComponent} from './components/guild/new-guild/new-guild.component';
+import {GuildOverviewComponent} from './components/guild/guild-overview/guild-overview.component';
+import {GuildSettingsComponent} from './components/guild/guild-settings/guild-settings.component';
 
-import {ToolbarComponent} from './components/toolbar/toolbar.component';
-import {FooterComponent} from './components/footer/footer.component';
-import {HomeComponent} from './components/home/home.component';
-import {DashboardComponent} from './components/dashboard/dashboard.component';
-import {ProgressBarComponent} from './components/progress-bar/progress-bar.component';
-import {NewProjectComponent} from './components/new-project/new-project.component';
-import {ProjectOverviewComponent} from './components/project-overview/project-overview.component';
-import {PageNotFoundComponent} from './components/page-not-found/page-not-found.component';
-import {ProjectSettingsComponent} from './components/project-settings/project-settings.component';
+// Command
 
 @NgModule({
   declarations: [
@@ -48,10 +53,10 @@ import {ProjectSettingsComponent} from './components/project-settings/project-se
     HomeComponent,
     DashboardComponent,
     ProgressBarComponent,
-    NewProjectComponent,
-    ProjectOverviewComponent,
+    NewGuildComponent,
+    GuildOverviewComponent,
     PageNotFoundComponent,
-    ProjectSettingsComponent
+    GuildSettingsComponent
   ],
   imports: [
     BrowserModule,
@@ -86,7 +91,7 @@ import {ProjectSettingsComponent} from './components/project-settings/project-se
     AppRoutingModule
   ],
   providers: [],
-  entryComponents: [NewProjectComponent],
+  entryComponents: [NewGuildComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule {

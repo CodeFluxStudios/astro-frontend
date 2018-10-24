@@ -1,15 +1,15 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import {ProjectSettingsComponent} from './project-settings.component';
+import {GuildSettingsComponent} from './guild-settings.component';
 import {MatCardModule, MatCheckboxModule, MatDividerModule, MatSlideToggleModule} from '@angular/material';
 
-describe('ProjectSettingsComponent', () => {
-  let component: ProjectSettingsComponent;
-  let fixture: ComponentFixture<ProjectSettingsComponent>;
+describe('GuildSettingsComponent', () => {
+  let component: GuildSettingsComponent;
+  let fixture: ComponentFixture<GuildSettingsComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ProjectSettingsComponent],
+      declarations: [GuildSettingsComponent],
       imports: [
         MatCheckboxModule,
         MatCardModule,
@@ -21,7 +21,7 @@ describe('ProjectSettingsComponent', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ProjectSettingsComponent);
+    fixture = TestBed.createComponent(GuildSettingsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

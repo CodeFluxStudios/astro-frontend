@@ -1,6 +1,6 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import {ProjectOverviewComponent} from './project-overview.component';
+import {GuildOverviewComponent} from './guild-overview.component';
 import {
   MatAutocompleteModule,
   MatCardModule,
@@ -12,18 +12,18 @@ import {
   MatSlideToggleModule
 } from '@angular/material';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {ProjectSettingsComponent} from '../project-settings/project-settings.component';
+import {GuildSettingsComponent} from '../guild-settings/guild-settings.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
-describe('ProjectOverviewComponent', () => {
-  let component: ProjectOverviewComponent;
-  let fixture: ComponentFixture<ProjectOverviewComponent>;
+describe('GuildOverviewComponent', () => {
+  let component: GuildOverviewComponent;
+  let fixture: ComponentFixture<GuildOverviewComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-        ProjectOverviewComponent,
-        ProjectSettingsComponent
+        GuildOverviewComponent,
+        GuildSettingsComponent
       ],
       imports: [
         MatChipsModule,
@@ -43,7 +43,7 @@ describe('ProjectOverviewComponent', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ProjectOverviewComponent);
+    fixture = TestBed.createComponent(GuildOverviewComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

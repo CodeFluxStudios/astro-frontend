@@ -5,11 +5,11 @@ import {map, startWith} from 'rxjs/operators';
 import {MatAutocompleteSelectedEvent} from '@angular/material';
 
 @Component({
-  selector: 'app-project-overview',
-  templateUrl: './project-overview.component.html',
-  styleUrls: ['./project-overview.component.scss']
+  selector: 'app-guild-overview',
+  templateUrl: './guild-overview.component.html',
+  styleUrls: ['./guild-overview.component.scss']
 })
-export class ProjectOverviewComponent implements OnInit {
+export class GuildOverviewComponent implements OnInit {
   filterCtrl = new FormControl();
   filteredEvents: Observable<string[]>;
   events: string[] = [];

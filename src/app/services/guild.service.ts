@@ -7,30 +7,24 @@ import {catchError, map, tap} from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
-export class ProjectService {
-  public curProject: GuildOverview;
+export class GuildService {
+  public curGuild: GuildOverview;
 
   constructor(private http: HttpClient) {
   }
 
-  /** GET project overviews from the server */
-  getProjectOverviews(): Observable<GuildOverview[]> {
+  /** GET guilds with admin right from the server */
+  getAccessibleGuilds(): Observable<GuildOverview[]> {
     return this.http.get<GuildOverview[]>('api/guilds/admin')
       .pipe(
-        tap(projects => console.log('Fetched project overviews')),
+        tap(guilds => console.log('Fetched guild overviews')),
         map(guilds => guilds.map(value => {
           const guild = new GuildOverview();
           guild.loadGuildOverviewData(value);
           return guild;
         })),
-        catchError(this.handleError('getProjectOverviews', []))
+        catchError(this.handleError('getAccessibleGuilds', []))
       );
-  }
-
-
-  /** GET project overviews from the server */
-  getProjectOverviewsOther(): Observable<GuildOverview[]> {
-    return this.getProjectOverviews();
   }
 
   /**

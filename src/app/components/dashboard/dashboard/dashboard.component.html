@@ -1,24 +1,24 @@
 <div class="layout-container">
   <div id="headline">
     <h1 class="mat-display-1">Your Guilds</h1>
-    <button mat-button color="primary" (click)="newProject()">
+    <button mat-button color="primary" (click)="newGuild()">
       <mat-icon>add</mat-icon>
       <span>Add Astro to your Guild</span>
     </button>
   </div>
 
-  <div id="spinnerContainer" *ngIf="isLoadingProjects">
+  <div id="spinnerContainer" *ngIf="isLoadingGuilds">
     <mat-spinner color="accent" [strokeWidth]="6"></mat-spinner>
   </div>
 
-  <div id="projectContainer">
-    <mat-card *ngFor="let project of projects" mat-ripple class="project-card mat-elevation-z4"
-              (click)="showProject(project)">
+  <div id="guildsContainer">
+    <mat-card *ngFor="let guild of guilds" mat-ripple class="guild-card mat-elevation-z4"
+              (click)="showGuild(guild)">
       <img width="50" alt="Guild Logo" class="round"
-           src="{{project.iconURL}}"
+           src="{{guild.iconURL}}"
            onerror="this.onerror=null;this.src = '../assets/question-mark-placeholder.png';">
       <mat-card-content>
-        <h2 class="mat-title truncate-text">{{project.name}}</h2>
+        <h2 class="mat-title truncate-text">{{guild.name}}</h2>
       </mat-card-content>
     </mat-card>
   </div>

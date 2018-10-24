@@ -1,0 +1,6 @@
+@import '../../../../../node_modules/@angular/material/theming';
+@import "../../../theme/custom-dark-colors";
+
+footer {
+  background-color: map-get($custom-dark-palette, 900);
+}
