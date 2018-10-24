@@ -28,7 +28,7 @@ export class AccountService {
 
   login(): void {
     console.log('login');
-    const loginWindow = window.open('http://localhost:5000/login', '_blank', 'height=720,width=500');
+    const loginWindow = window.open('http://lvh.me:5000/login', '_blank', 'height=720,width=500');
     loginWindow.focus();
   }
 

@@ -3,9 +3,12 @@ export class GuildOverview {
   public iconURL: string;
   public id: string;
 
-  constructor(name: string, iconURL: string, id: string) {
-    this.name = name;
-    this.iconURL = iconURL;
-    this.id = id;
+  constructor() {
+  }
+
+  loadGuildOverviewData(data) {
+    this.name = data['name'];
+    this.id = data['id'];
+    this.iconURL = `https://cdn.discordapp.com/icons/${this.id}/${data['icon']}.png`;
   }
 }
