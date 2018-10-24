@@ -9,7 +9,11 @@
   <div class="toolbar-section">
     <span *ngIf="router.url === '/home'" class="mat-headline">AstroBot</span>
     <span *ngIf="router.url === '/dashboard'" class="mat-headline">Dashboard</span>
-    <span *ngIf="router.url.includes('/guild/')" class="mat-headline">{{ guildService.curGuild.name }}</span>
+    <span *ngIf="router.url.includes('/guild/')" class="mat-headline">
+      <!-- TODO: Fix stuff -->
+      <span *ngIf="guildService.curGuild !== undefined">{{guildService.curGuild.name}}</span>
+      <span *ngIf="guildService.curGuild === undefined">TODO: Name</span>
+    </span>
     <div *ngIf="router.url.includes('/command')" id="commandDetails">
       <span class="mat-headline">{{ commandService.curCommand }}</span>
       <span class="mat-caption">{{ guildService.curGuild.name }}</span>

@@ -1,8 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {GuildOverview} from '../../../value-types/guild-overview';
 import {GuildService} from '../../../services/guild.service';
-import {MatDialog} from '@angular/material';
-import {NewGuildComponent} from '../../guild/new-guild/new-guild.component';
 import {Router} from '@angular/router';
 
 @Component({
@@ -15,7 +13,6 @@ export class DashboardComponent implements OnInit {
   guilds: GuildOverview[] = [];
 
   constructor(private guildService: GuildService,
-              public dialog: MatDialog,
               private router: Router) {
   }
 
@@ -28,15 +25,6 @@ export class DashboardComponent implements OnInit {
     this.guildService.getAccessibleGuilds().subscribe(guildOverviews => {
       this.isLoadingGuilds = false;
       this.guilds = guildOverviews;
-    });
-  }
-
-  newGuild() {
-    const dialogRef = this.dialog.open(NewGuildComponent, {
-      width: '400px',
-      autoFocus: false,
-      closeOnNavigation: true,
-      disableClose: true
     });
   }
 

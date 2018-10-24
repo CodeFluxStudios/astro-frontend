@@ -1,11 +1,5 @@
 <div class="layout-container">
-  <div id="headline">
-    <h1 class="mat-display-1">Your Guilds</h1>
-    <button mat-button color="primary" (click)="newGuild()">
-      <mat-icon>add</mat-icon>
-      <span>Add Astro to your Guild</span>
-    </button>
-  </div>
+  <h1 class="mat-display-1">Your Guilds</h1>
 
   <div id="spinnerContainer" *ngIf="isLoadingGuilds">
     <mat-spinner color="accent" [strokeWidth]="6"></mat-spinner>

@@ -8,25 +8,8 @@ div.layout-container {
   margin-top: 50px;
   margin-bottom: 50px;
 
-  #headline {
-    display: flex;
+  h1 {
     margin-bottom: 48px;
-    justify-content: space-between;
-
-    h1 {
-      margin: 0;
-    }
-
-    button {
-      font-size: 18px;
-      padding-left: 8px;
-      mat-icon {
-        font-size: 35px;
-        width: 35px;
-        height: 35px;
-        margin-right: 8px;
-      }
-    }
   }
 
   #spinnerContainer {

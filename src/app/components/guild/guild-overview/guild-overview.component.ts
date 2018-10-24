@@ -2,7 +2,8 @@ import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {FormControl} from '@angular/forms';
 import {Observable, of} from 'rxjs';
 import {map, startWith} from 'rxjs/operators';
-import {MatAutocompleteSelectedEvent} from '@angular/material';
+import {MatAutocompleteSelectedEvent, MatDialog} from '@angular/material';
+import {NewCommandComponent} from '../new-command/new-command.component';
 
 @Component({
   selector: 'app-guild-overview',
@@ -20,7 +21,7 @@ export class GuildOverviewComponent implements OnInit {
 
   @ViewChild('filterInput') filterInput: ElementRef<HTMLInputElement>;
 
-  constructor() {
+  constructor(public dialog: MatDialog) {
     this.filteredCommands = of(this.allCommands.slice());
 
     this.filteredEvents = this.filterCtrl.valueChanges.pipe(
@@ -56,7 +57,12 @@ export class GuildOverviewComponent implements OnInit {
   }
 
   newCommand() {
-    // TODO: New command
+    const dialogRef = this.dialog.open(NewCommandComponent, {
+      width: '400px',
+      autoFocus: false,
+      closeOnNavigation: true,
+      disableClose: true
+    });
   }
 
   showCommand(command: string) {

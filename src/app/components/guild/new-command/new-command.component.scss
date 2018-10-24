@@ -1,0 +1,11 @@
+#createCommandButton {
+  .mat-button-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    span#spinnerContainer {
+      margin-right: 8px;
+    }
+  }
+}

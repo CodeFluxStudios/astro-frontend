@@ -2,8 +2,6 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 
 import {AppComponent} from './app.component';
-import {HttpClientInMemoryWebApiModule} from 'angular-in-memory-web-api';
-import {InMemoryDataService} from './in-memory-data.service';
 import {HttpClientModule} from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {
@@ -39,7 +37,7 @@ import {HomeComponent} from './components/home/home/home.component';
 // Dashboard
 import {DashboardComponent} from './components/dashboard/dashboard/dashboard.component';
 // Guild
-import {NewGuildComponent} from './components/guild/new-guild/new-guild.component';
+import {NewCommandComponent} from './components/guild/new-command/new-command.component';
 import {GuildOverviewComponent} from './components/guild/guild-overview/guild-overview.component';
 import {GuildSettingsComponent} from './components/guild/guild-settings/guild-settings.component';
 
@@ -53,7 +51,7 @@ import {GuildSettingsComponent} from './components/guild/guild-settings/guild-se
     HomeComponent,
     DashboardComponent,
     ProgressBarComponent,
-    NewGuildComponent,
+    NewCommandComponent,
     GuildOverviewComponent,
     PageNotFoundComponent,
     GuildSettingsComponent
@@ -66,9 +64,11 @@ import {GuildSettingsComponent} from './components/guild/guild-settings/guild-se
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
     // and returns simulated server responses.
     // TODO: Remove it when a real server is ready to receive requests.
+    /*
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, {dataEncapsulation: false, passThruUnknownUrl: true, delay: 1000}
     ),
+    */
     BrowserAnimationsModule,
     MatButtonModule,
     MatRippleModule,
@@ -91,7 +91,7 @@ import {GuildSettingsComponent} from './components/guild/guild-settings/guild-se
     AppRoutingModule
   ],
   providers: [],
-  entryComponents: [NewGuildComponent],
+  entryComponents: [NewCommandComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule {

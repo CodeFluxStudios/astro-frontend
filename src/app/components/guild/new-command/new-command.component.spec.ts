@@ -1,16 +1,16 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import {NewGuildComponent} from './new-guild.component';
+import {NewCommandComponent} from './new-command.component';
 import {MatListModule, MatProgressSpinnerModule} from '@angular/material';
 import {HttpClientModule} from '@angular/common/http';
 
-describe('NewGuildComponent', () => {
-  let component: NewGuildComponent;
-  let fixture: ComponentFixture<NewGuildComponent>;
+describe('NewCommandComponent', () => {
+  let component: NewCommandComponent;
+  let fixture: ComponentFixture<NewCommandComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [NewGuildComponent],
+      declarations: [NewCommandComponent],
       imports: [
         MatProgressSpinnerModule,
         MatListModule,
@@ -21,7 +21,7 @@ describe('NewGuildComponent', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NewGuildComponent);
+    fixture = TestBed.createComponent(NewCommandComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

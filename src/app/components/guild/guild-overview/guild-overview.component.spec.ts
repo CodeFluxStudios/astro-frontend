@@ -6,6 +6,7 @@ import {
   MatCardModule,
   MatCheckboxModule,
   MatChipsModule,
+  MatDialogModule,
   MatDividerModule,
   MatFormFieldModule,
   MatIconModule,
@@ -34,6 +35,7 @@ describe('GuildOverviewComponent', () => {
         MatFormFieldModule,
         MatCardModule,
         MatCheckboxModule,
+        MatDialogModule,
         MatSlideToggleModule,
         MatDividerModule,
         BrowserAnimationsModule
