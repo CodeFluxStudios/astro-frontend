@@ -33,8 +33,6 @@ export class GuildOverviewComponent implements OnInit {
       startWith(null),
       map((searchTerm: string | null) => searchTerm ? this.allCommands.slice() : this.allCommands.slice())
     );
-
-    console.log(this.filteredCommands);
   }
 
   remove(fruit: string): void {

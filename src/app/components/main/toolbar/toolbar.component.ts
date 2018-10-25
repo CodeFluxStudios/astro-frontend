@@ -20,7 +20,7 @@ export class ToolbarComponent implements OnInit {
   }
 
   login() {
-    this.accountService.login();
+    this.accountService.openLoginWindow();
   }
 
   logout() {

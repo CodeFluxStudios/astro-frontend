@@ -13,11 +13,10 @@ export class GuildService {
   constructor(private http: HttpClient) {
   }
 
-  /** GET guilds with admin right from the server */
   getAccessibleGuilds(): Observable<GuildOverview[]> {
-    return this.http.get<GuildOverview[]>('api/guilds/admin')
+    return this.http.get<GuildOverview[]>('api/user/guilds/admin')
       .pipe(
-        tap(guilds => console.log('Fetched guild overviews')),
+        tap(guilds => console.log('GuildService - getAccessibleGuilds')),
         map(guilds => guilds.map(value => {
           const guild = new GuildOverview();
           guild.loadGuildOverviewData(value);
@@ -25,6 +24,20 @@ export class GuildService {
         })),
         catchError(this.handleError('getAccessibleGuilds', []))
       );
+  }
+
+  getBotGuild(guildId: string): Observable<any> {
+    return this.http.get<any>(`api/bot/guilds/${guildId}`)
+      .pipe(
+        tap(guild => console.log('GuildService - getBotGuild')),
+        catchError(this.handleError('getBotGuild', undefined))
+      );
+  }
+
+  addBotToGuild(guildId: string) {
+    console.log('GuildService - addBotToGuild');
+    const loginWindow = window.open(`http://lvh.me:5000/api/bot/guilds/${guildId}`, '_blank', 'height=720,width=500');
+    loginWindow.focus();
   }
 
   /**

@@ -1,13 +1,25 @@
 @import '~@angular/material/theming';
 @import "../custom-dark-colors";
 
-a.hyperlink {
-  color: map-get($mat-cyan, A700);
-  text-decoration: none;
+a {
+  &.hyperlink {
+    color: inherit;
+    text-decoration: none;
 
-  &:hover {
-    text-decoration: underline;
-    cursor: pointer;
+    &:hover {
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+
+  &.hyperlink-accent {
+    color: map-get($mat-cyan, A700);
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+      cursor: pointer;
+    }
   }
 }
 

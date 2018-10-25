@@ -11,24 +11,12 @@ export class AccountService {
   public account: Account = undefined;
 
   constructor(private http: HttpClient, private router: Router) {
-    window.addEventListener('message', (event) => {
-      console.log(event);
 
-      if (event.origin !== 'http://lvh.me:5000') {
-        return;
-      }
-
-      if (event.data.username !== undefined) {
-        this.account = new Account();
-        this.account.loadAccountData(event.data);
-        this.router.navigateByUrl('dashboard');
-      }
-    }, false);
   }
 
-  login(): void {
-    console.log('login');
-    const loginWindow = window.open('http://lvh.me:5000/login', '_blank', 'height=720,width=500');
+  openLoginWindow(): void {
+    console.log('AccountService - openLoginWindow');
+    const loginWindow = window.open('http://lvh.me:5000/auth/login', '_blank', 'height=720,width=500');
     loginWindow.focus();
   }
 
