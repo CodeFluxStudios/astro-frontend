@@ -48,7 +48,7 @@ export class GuildService {
    */
   addBotToGuild(guildId: string): void {
     console.log('GuildService - addBotToGuild');
-    const guildAuthWindow = window.open(`http://lvh.me:5000/api/bot/guilds/${guildId}`, '_blank', 'height=720,width=500');
+    const guildAuthWindow = window.open(`http://lvh.me:5000/guilds/oauth/${guildId}`, '_blank', 'height=720,width=500');
     guildAuthWindow.focus();
   }
 
