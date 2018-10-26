@@ -1,7 +1,11 @@
+import {GuildDetails} from './guild-details';
+
 export class GuildOverview {
   public name: string;
   public iconURL: string;
   public id: string;
+  public hasBot: boolean;
+  public details: GuildDetails;
 
   constructor() {
   }

@@ -1,8 +1,6 @@
 import {Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
 import {Observable, of} from 'rxjs';
 import {Account} from '../value-types/account';
-import {Router} from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -10,10 +8,12 @@ import {Router} from '@angular/router';
 export class AccountService {
   public account: Account = undefined;
 
-  constructor(private http: HttpClient, private router: Router) {
-
+  constructor() {
   }
 
+  /**
+   * Opens a new window to login via Discord OAuth2.
+   */
   openLoginWindow(): void {
     console.log('AccountService - openLoginWindow');
     const loginWindow = window.open('http://lvh.me:5000/auth/login', '_blank', 'height=720,width=500');
