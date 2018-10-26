@@ -43,17 +43,7 @@ export class DashboardComponent implements OnInit {
   }
 
   onGuildClicked(guild: GuildOverview) {
-    /*
-    this.guildService.getBotGuild(guild.id).subscribe(data => {
-      console.log(data);
-      if (data !== undefined) {
-        if (data.code === undefined) {
-          this.showGuild(guild);
-        } else {
-          this.guildService.addBotToGuild(guild.id);
-        }
-      }
-    });*/
+    guild.hasBot ? this.showGuild(guild) : this.guildService.addBotToGuild(guild.id);
   }
 
   showGuild(guild: GuildOverview) {
