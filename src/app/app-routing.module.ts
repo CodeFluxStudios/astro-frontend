@@ -5,7 +5,6 @@ import {DashboardComponent} from './components/dashboard/dashboard/dashboard.com
 import {GuildOverviewComponent} from './components/guild/guild-overview/guild-overview.component';
 import {PageNotFoundComponent} from './components/main/page-not-found/page-not-found.component';
 
-
 const routes: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
   {path: 'home', component: HomeComponent},
