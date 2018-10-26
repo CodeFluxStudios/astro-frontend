@@ -43,6 +43,7 @@ export class DashboardComponent implements OnInit {
   }
 
   onGuildClicked(guild: GuildOverview) {
+    /*
     this.guildService.getBotGuild(guild.id).subscribe(data => {
       console.log(data);
       if (data !== undefined) {
@@ -52,7 +53,7 @@ export class DashboardComponent implements OnInit {
           this.guildService.addBotToGuild(guild.id);
         }
       }
-    });
+    });*/
   }
 
   showGuild(guild: GuildOverview) {

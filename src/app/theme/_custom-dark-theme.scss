@@ -52,8 +52,8 @@ $custom-theme-foreground: (
 }
 
 $custom-theme-primary: mat-palette($mat-yellow, 600, 200, 800);
-;
+
 $custom-theme-accent: mat-palette($mat-cyan, A700);
-$custom-theme-warn: mat-palette($mat-red, 400);
+$custom-theme-warn: mat-palette($mat-deep-orange, 500);
 
 $custom-theme: create-custom-theme($custom-theme-primary, $custom-theme-accent, $custom-theme-warn);

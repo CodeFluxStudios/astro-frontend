@@ -3,6 +3,7 @@ import {Observable, of} from 'rxjs';
 import {GuildOverview} from '../value-types/guild-overview';
 import {HttpClient} from '@angular/common/http';
 import {catchError, map, tap} from 'rxjs/operators';
+import {MessagingService} from './messaging.service';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,8 @@ import {catchError, map, tap} from 'rxjs/operators';
 export class GuildService {
   public curGuild: GuildOverview;
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient,
+              private messagingService: MessagingService) {
   }
 
   /**
@@ -44,7 +46,7 @@ export class GuildService {
    * Opens a new window to add the bot to a guild.
    * @param guildId - The guild's ID the user wants to add the bot
    */
-  addBotToGuild(guildId: string) {
+  addBotToGuild(guildId: string): void {
     console.log('GuildService - addBotToGuild');
     const guildAuthWindow = window.open(`http://lvh.me:5000/api/bot/guilds/${guildId}`, '_blank', 'height=720,width=500');
     guildAuthWindow.focus();
@@ -58,6 +60,8 @@ export class GuildService {
    */
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
+
+      this.messagingService.emitMessage({key: 'error', data: error});
 
       // TODO: send the error to remote logging infrastructure
       console.error(error);

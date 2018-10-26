@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {Observable, of} from 'rxjs';
 import {Account} from '../value-types/account';
+import {MessagingService} from './messaging.service';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +9,7 @@ import {Account} from '../value-types/account';
 export class AccountService {
   public account: Account = undefined;
 
-  constructor() {
+  constructor(private messagingService: MessagingService) {
   }
 
   /**
@@ -28,6 +29,8 @@ export class AccountService {
    */
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
+
+      this.messagingService.emitMessage({key: 'error', data: error});
 
       // TODO: send the error to remote logging infrastructure
       console.error(error);

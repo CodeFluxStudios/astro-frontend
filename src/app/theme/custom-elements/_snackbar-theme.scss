@@ -2,10 +2,7 @@
 @import "../custom-dark-colors";
 
 .mat-snack-bar-container {
-  background-color: map-get($custom-dark-palette, 300);
-
-  simple-snack-bar {
-    justify-content: center;
-  }
+  background-color: map-get($mat-deep-orange, 500);
+  color: white;
 }
 
