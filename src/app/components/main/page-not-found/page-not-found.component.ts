@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {AccountService} from '../../../services/account.service';
 
 @Component({
   selector: 'app-page-not-found',
@@ -7,10 +8,11 @@ import {Component, OnInit} from '@angular/core';
 })
 export class PageNotFoundComponent implements OnInit {
 
-  constructor() {
+  constructor(private accountService: AccountService) {
   }
 
   ngOnInit() {
+    this.accountService.loadAccount().subscribe();
   }
 
 }
