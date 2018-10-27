@@ -26,7 +26,8 @@
       Login
     </button>
     <div *ngIf="accountService.account !== undefined" id="userDataContainer">
-      <img src="{{ accountService.account.avatarUrl }}" width="30" alt="User Avatar" class="round">
+      <img src="{{ accountService.account.avatarUrl }}" width="30" alt="User Avatar" class="round"
+           onerror="this.onerror=null;this.src = '../assets/baseline-account_circle-24px.svg';">
       <span class="mat-body-1 wrap-text">{{ accountService.account.username }}</span>
       <button mat-button color="primary" (click)="logout()">Logout</button>
     </div>
