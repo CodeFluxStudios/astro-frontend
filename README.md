@@ -6,7 +6,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ### 1. Install Node.js and NPM
 
-If you haven't [Node.js](https://nodejs.org/en/) already installed, download and install it.
+If you haven't [Node.js](https://nodejs.org/en/) already installed, download and install it. I suggest you to download the LTS version 8, since Angular 7 **does not support version 11 yet!**
 
 ### 2. Install Angular
 
