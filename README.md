@@ -2,11 +2,13 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.2 and has been manually upgraded to version 7.0.3.
 
+Angular requires Node.js version 8.x or 10.x.
+
 # Testing and Building
 
 ### 1. Install Node.js and NPM
 
-If you haven't [Node.js](https://nodejs.org/en/) already installed, download and install it. I suggest you to download the LTS version 8, since Angular 7 **does not support version 11 yet!**
+If you haven't [Node.js](https://nodejs.org/en/) already installed, download and install it.
 
 ### 2. Install Angular
 
