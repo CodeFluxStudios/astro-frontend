@@ -14,20 +14,6 @@ export class DashboardComponent implements OnInit {
 
   constructor(private guildService: GuildService,
               private router: Router) {
-    window.addEventListener('message', (event) => {
-      if (event.origin !== 'http://lvh.me:5000' || event.data.key === undefined) {
-        return;
-      }
-
-      console.log('DashboardComponent Message listener');
-      console.log(event.data);
-
-      switch (event.data.key) {
-        case 'guild_auth':
-
-          break;
-      }
-    }, false);
   }
 
   ngOnInit() {

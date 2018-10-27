@@ -14,5 +14,6 @@ export class GuildOverview {
     this.name = data['name'];
     this.id = data['id'];
     this.iconURL = `https://cdn.discordapp.com/icons/${this.id}/${data['icon']}.png`;
+    this.hasBot = data['bot_joined'];
   }
 }

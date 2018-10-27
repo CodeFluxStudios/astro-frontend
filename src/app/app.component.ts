@@ -3,6 +3,7 @@ import {MatIconRegistry, MatSnackBar} from '@angular/material';
 import {DomSanitizer} from '@angular/platform-browser';
 import {MessagingService} from './services/messaging.service';
 import {fadeAnimation} from './theme/animations/fade-animation';
+import {WindowEventListenerService} from './services/window-event-listener.service';
 
 @Component({
   selector: 'app-root',
@@ -15,6 +16,7 @@ export class AppComponent {
   constructor(private matIconRegistry: MatIconRegistry,
               private domSanitizer: DomSanitizer,
               private messagingService: MessagingService,
+              private windowEventListener: WindowEventListenerService,
               private snackBar: MatSnackBar) {
     this.matIconRegistry.addSvgIcon(
       'discord',
