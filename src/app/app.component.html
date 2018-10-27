@@ -1,6 +1,8 @@
 <app-progress-bar></app-progress-bar>
 <div id="rootContainer">
-  <app-toolbar></app-toolbar>
-  <router-outlet></router-outlet>
-  <app-footer></app-footer>
+  <app-toolbar id="toolbar"></app-toolbar>
+  <main [@fadeAnimation]="o.isActivated ? o.activatedRoute : ''">
+    <router-outlet #o="outlet"></router-outlet>
+  </main>
+  <app-footer id="footer"></app-footer>
 </div>

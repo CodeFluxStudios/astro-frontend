@@ -23,9 +23,3 @@ script:
 - npm run test:headless
 - npm run build --prod
 - xvfb-run npm run e2e
-
-deploy:
-  provider: heroku
-  api_key:
-    secure: Wjx3YDtK6n8zPUTJnkU3OSUKAcrsjZFK3MvPbXKmOROCUIR276w2yaD01vdzI8ngAlaXPd0bUKrWs7fs04NTOx4ZPKZc2Mqwl5wgnApq13tYeqfkiKdnYFIZn96XqR+u3yQVc7fiCxh/KiRoR0jxfh1MD4QH1+ZgkajuX6q3cEbI8ZuS2/dOqXnybpaFWkzepqWRTz+jHoYIj58mMxNiP4TtWZTlYCmmgKotSWVLwAzua4AZHtuZPx98RUJXJaLRE0QVI5fgO4bnSiYanGN5w90KqRFbUaLcOHXVcqSIYCTw320btixwRBIJYwJHxs6gjUFVFDxdB1p6j7xv21oddPZoN1Qlp8eaTeSwGyDiT8r6LORe2hpAsV2XYavT+/tcu6uoy/YbNc/VRRdUWoGJ1+3To2LmVPpei2XhgCHIzR1vm1xmdseWpNh1sO6YXP8RLlF+/kq5pAXZSaZlN4GrH5r/W2uF5IMwPFHEEzJShaTkyJaBI83PKFQAW+xXObsUZxjqgMFsSWtevcU8CNDQWyGBWWJrmg1JtTI2NxFhMvq6SHt87CwgiYliFdsCCtk1Hm1c6W5r5TQEolgswNG7RA2l+xVbvTZ/BM45HI/PNNMytadRrT/q/fHF1Cr4V7l3EC81zoUOkNpIp2rApjAjGKbwuEmWT7PvtS1nNJZOc1A=
-  app: astrobot-dev-frontend
