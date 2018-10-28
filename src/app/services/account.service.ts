@@ -2,8 +2,9 @@ import {Injectable} from '@angular/core';
 import {Observable, of} from 'rxjs';
 import {Account} from '../value-types/account';
 import {MessagingService} from './messaging.service';
-import {catchError, map, tap} from 'rxjs/operators';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpEvent, HttpEventType, HttpRequest} from '@angular/common/http';
+import {ProgressBarService} from './progress-bar.service';
+import {catchError, last, map} from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,9 @@ import {HttpClient} from '@angular/common/http';
 export class AccountService {
   public account: Account = undefined;
 
-  constructor(private http: HttpClient, private messagingService: MessagingService) {
+  constructor(private http: HttpClient,
+              private messagingService: MessagingService,
+              private progressBarService: ProgressBarService) {
   }
 
   /**
@@ -32,26 +35,59 @@ export class AccountService {
   }*/
 
   loadAccount(): Observable<Account> {
+    console.log('AccountService - loadAccount');
+
     if (this.account !== undefined) {
       return of(this.account);
     }
 
-    return this.http.get<Account>('api/user')
-      .pipe(
-        tap(data => console.log('AccountService - loadAccount')),
-        map(data => {
-          console.log(data);
-          if (data.username !== undefined) {
-            const account = new Account();
-            account.loadAccountData(data);
-            this.account = account;
-            return account;
-          } else {
-            return null;
-          }
-        }),
-        catchError(this.handleError('loadAccount', null))
-      );
+    const request = new HttpRequest('GET', 'api/user', {
+      reportProgress: true
+    });
+
+    return this.http.request(request).pipe(
+      map(event => this.reportProgress(event)),
+      last(),
+      map(event => {
+        const data = event.body;
+        if (data.username !== undefined) {
+          const account = new Account();
+          account.loadAccountData(data);
+          this.account = account;
+          return account;
+        } else {
+          return null;
+        }
+      }),
+      catchError(this.handleError('loadAccount', null))
+    );
+  }
+
+  /** Return distinct message for sent, upload progress, & response events */
+  private reportProgress<T>(event: HttpEvent<T>): any {
+    console.log('AccountService - reportProgress');
+    console.log(event);
+
+    switch (event.type) {
+      case HttpEventType.Sent:
+        console.log('Sent');
+        this.progressBarService.isLoading = true;
+        this.progressBarService.value = 0;
+        break;
+      case HttpEventType.DownloadProgress:
+        console.log('Download Progress');
+        const percentage = 100 / event.total * event.loaded;
+        console.log(event.loaded + ' | ' + event.total);
+        this.progressBarService.isLoading = true;
+        this.progressBarService.value = percentage;
+        break;
+      case HttpEventType.Response:
+        console.log('Response');
+        this.progressBarService.value = 100;
+        this.progressBarService.isLoading = false;
+    }
+
+    return event;
   }
 
   /**
