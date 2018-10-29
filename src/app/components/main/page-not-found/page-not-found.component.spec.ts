@@ -2,6 +2,7 @@ import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
 import {PageNotFoundComponent} from './page-not-found.component';
 import {MatIconModule} from '@angular/material';
+import {HttpClientModule} from '@angular/common/http';
 
 describe('PageNotFoundComponent', () => {
   let component: PageNotFoundComponent;
@@ -11,6 +12,7 @@ describe('PageNotFoundComponent', () => {
     TestBed.configureTestingModule({
       declarations: [PageNotFoundComponent],
       imports: [
+        HttpClientModule,
         MatIconModule
       ]
     })

@@ -8,8 +8,8 @@ describe('Home Tests', () => {
     page.navigateToHome();
   });
 
-  it('should display login button', () => {
-    expect(page.getHomeLoginButtonText()).toEqual('LOGIN');
+  it('should display "GET STARTED" button', () => {
+    expect(page.getHomeLoginButtonText()).toEqual('GET STARTED');
   });
 
   it('should display copyright', () => {
