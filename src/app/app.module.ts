@@ -40,10 +40,9 @@ import {DashboardComponent} from './components/dashboard/dashboard/dashboard.com
 import {NewCommandComponent} from './components/guild/new-command/new-command.component';
 import {GuildOverviewComponent} from './components/guild/guild-overview/guild-overview.component';
 import {GuildSettingsComponent} from './components/guild/guild-settings/guild-settings.component';
-import {HttpClientInMemoryWebApiModule} from 'angular-in-memory-web-api';
-import {InMemoryDataService} from './in-memory-data.service';
+import {CommandEditorComponent} from './components/command/command-editor/command-editor.component';
 
-// Command
+// CommandDetails
 
 @NgModule({
   declarations: [
@@ -56,7 +55,8 @@ import {InMemoryDataService} from './in-memory-data.service';
     NewCommandComponent,
     GuildOverviewComponent,
     PageNotFoundComponent,
-    GuildSettingsComponent
+    GuildSettingsComponent,
+    CommandEditorComponent
   ],
   imports: [
     BrowserModule,
@@ -66,11 +66,11 @@ import {InMemoryDataService} from './in-memory-data.service';
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
     // and returns simulated server responses.
     // TODO: Remove it when a real server is ready to receive requests.
-
-    HttpClientInMemoryWebApiModule.forRoot(
-      InMemoryDataService, {dataEncapsulation: false, passThruUnknownUrl: true, delay: 1000}
-    ),
-
+    /*
+        HttpClientInMemoryWebApiModule.forRoot(
+          InMemoryDataService, {dataEncapsulation: false, passThruUnknownUrl: true, delay: 1000}
+        ),
+    */
     BrowserAnimationsModule,
     MatButtonModule,
     MatRippleModule,

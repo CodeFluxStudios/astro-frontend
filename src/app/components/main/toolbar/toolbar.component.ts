@@ -1,6 +1,6 @@
 import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {AccountService} from '../../../services/account.service';
-import {Router} from '@angular/router';
+import {Router, RoutesRecognized} from '@angular/router';
 import {GuildService} from '../../../services/guild.service';
 import {CommandService} from '../../../services/command.service';
 
@@ -11,6 +11,8 @@ import {CommandService} from '../../../services/command.service';
   encapsulation: ViewEncapsulation.None
 })
 export class ToolbarComponent implements OnInit {
+  public curUrlParams: {};
+
   constructor(public accountService: AccountService,
               public guildService: GuildService,
               public commandService: CommandService,
@@ -18,6 +20,11 @@ export class ToolbarComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.router.events.subscribe(val => {
+      if (val instanceof RoutesRecognized) {
+        this.curUrlParams = val.state.root.firstChild.params;
+      }
+    });
   }
 
   login() {

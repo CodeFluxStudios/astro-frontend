@@ -10,6 +10,7 @@ import {
   MatDividerModule,
   MatFormFieldModule,
   MatIconModule,
+  MatProgressSpinnerModule,
   MatSlideToggleModule
 } from '@angular/material';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
@@ -42,7 +43,8 @@ describe('GuildOverviewComponent', () => {
         MatDividerModule,
         BrowserAnimationsModule,
         RouterTestingModule,
-        HttpClientModule
+        HttpClientModule,
+        MatProgressSpinnerModule
       ]
     })
       .compileComponents();

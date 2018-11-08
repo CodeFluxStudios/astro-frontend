@@ -13,16 +13,21 @@
       <span class="mat-headline">Dashboard</span>
       <a class="hyperlink mat-caption" routerLink="/home">Back to Home</a>
     </div>
-    <div *ngIf="router.url.includes('/guild/')" class="details-view">
+    <div *ngIf="router.url.includes('/guild/') && curUrlParams.commandId === undefined" class="details-view">
       <span class="mat-headline" *ngIf="guildService.curGuild !== undefined">{{guildService.curGuild.name}}</span>
       <div *ngIf="guildService.curGuild === undefined" class="loading-headline">
         <mat-spinner [diameter]="20"></mat-spinner>
       </div>
       <a class="hyperlink mat-caption" routerLink="/dashboard">Back to Dashboard</a>
     </div>
-    <div *ngIf="router.url.includes('/command/')" class="details-view">
-      <span class="mat-headline">{{ commandService.curCommand }}</span>
-      <a class="hyperlink mat-caption" [routerLink]="'/guild/' + guildService.curGuild.id">Back to Dashboard</a>
+    <div *ngIf="router.url.includes('/guild/') && curUrlParams.commandId !== undefined" class="details-view">
+      <span class="mat-headline"
+            *ngIf="commandService.curCommand !== undefined">{{ commandService.curCommand.name }}</span>
+      <div *ngIf="commandService.curCommand === undefined" class="loading-headline">
+        <mat-spinner [diameter]="20"></mat-spinner>
+      </div>
+      <a class="hyperlink mat-caption" *ngIf="guildService.curGuild !== undefined"
+         [routerLink]="'/guild/' + guildService.curGuild.id">Back to Guild</a>
     </div>
     <span *ngIf="router.url === '/page-not-found'" class="mat-headline">Error: 404</span>
   </div>

@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Observable, of} from 'rxjs';
-import {GuildOverview} from '../value-types/guild-overview';
+import {GuildOverview} from '../value-types/guild/guild-overview';
 import {HttpClient} from '@angular/common/http';
 import {catchError, map, tap} from 'rxjs/operators';
 import {MessagingService} from './messaging.service';

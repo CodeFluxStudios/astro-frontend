@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {GuildOverview} from '../../../value-types/guild-overview';
+import {GuildOverview} from '../../../value-types/guild/guild-overview';
 import {GuildService} from '../../../services/guild.service';
 import {Router} from '@angular/router';
 

@@ -79,4 +79,13 @@ div.layout-container {
       }
     }
   }
+
+  #spinnerContainer {
+    display: flex;
+    justify-content: center;
+
+    mat-spinner {
+      margin-top: 50px;
+    }
+  }
 }

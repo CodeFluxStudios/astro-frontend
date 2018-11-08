@@ -4,8 +4,10 @@ import {Observable, of} from 'rxjs';
 import {map, startWith} from 'rxjs/operators';
 import {MatAutocompleteSelectedEvent, MatDialog} from '@angular/material';
 import {NewCommandComponent} from '../new-command/new-command.component';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {GuildService} from '../../../services/guild.service';
+import {CommandOverview} from '../../../value-types/command/command-overview';
+import {CommandService} from '../../../services/command.service';
 
 @Component({
   selector: 'app-guild-overview',
@@ -18,16 +20,18 @@ export class GuildOverviewComponent implements OnInit {
   events: string[] = [];
   allEvents: string[] = ['Apple', 'Lemon', 'Lime', 'Orange', 'Strawberry'];
 
-  filteredCommands: Observable<string[]>;
-  allCommands: string[] = ['join-guild', 'leave-guild', 'add-guild'];
+  filteredCommands: Observable<CommandOverview[]>;
+  allCommands: CommandOverview[] = [];
+
+  loadingCommands: boolean;
 
   @ViewChild('filterInput') filterInput: ElementRef<HTMLInputElement>;
 
   constructor(public dialog: MatDialog,
               private route: ActivatedRoute,
-              private guildService: GuildService) {
-    this.filteredCommands = of(this.allCommands.slice());
-
+              private router: Router,
+              private guildService: GuildService,
+              private commandService: CommandService) {
     this.filteredEvents = this.filterCtrl.valueChanges.pipe(
       startWith(null),
       map((searchTerm: string | null) => searchTerm ? this._filter(searchTerm) : this.allEvents.slice())
@@ -67,12 +71,14 @@ export class GuildOverviewComponent implements OnInit {
     });
   }
 
-  showCommand(command: string) {
-
+  showCommand(command: CommandOverview) {
+    this.commandService.curCommand = command;
+    this.router.navigateByUrl(`guild/${this.guildService.curGuild.id}/${command.id}`);
   }
 
   getGuild() {
-    const guildId = this.route.snapshot.paramMap.get('id');
+    const guildId = this.route.snapshot.paramMap.get('guildId');
+    console.log(guildId);
     this.guildService.getBotGuild(guildId).subscribe(guild => {
       if (guild !== null) {
         console.log(guild);
@@ -84,8 +90,19 @@ export class GuildOverviewComponent implements OnInit {
     });
   }
 
+  getCommands() {
+    this.loadingCommands = true;
+    const guildId = this.route.snapshot.paramMap.get('guildId');
+    this.commandService.getAllCommands(guildId).subscribe(commands => {
+      this.allCommands = commands;
+      this.filteredCommands = of(this.allCommands.slice());
+      this.loadingCommands = false;
+    });
+  }
+
   ngOnInit() {
     this.getGuild();
+    this.getCommands();
   }
 
   private _filter(value: string): string[] {
