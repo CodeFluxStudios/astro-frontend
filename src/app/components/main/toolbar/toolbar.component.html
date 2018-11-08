@@ -8,11 +8,16 @@
   </div>
   <div class="toolbar-section">
     <span *ngIf="router.url === '/home'" class="mat-headline">AstroBot</span>
-    <span *ngIf="router.url === '/dashboard'" class="mat-headline">Dashboard</span>
+    <span *ngIf="" class="mat-headline">Dashboard</span>
+    <div *ngIf="router.url === '/dashboard'" class="details-view">
+      <span class="mat-headline">Dashboard</span>
+      <a class="hyperlink mat-caption" routerLink="/home">Back to Home</a>
+    </div>
     <div *ngIf="router.url.includes('/guild/')" class="details-view">
-      <!-- TODO: Fix stuff -->
       <span class="mat-headline" *ngIf="guildService.curGuild !== undefined">{{guildService.curGuild.name}}</span>
-      <span class="mat-headline" *ngIf="guildService.curGuild === undefined">TODO: Name</span>
+      <div *ngIf="guildService.curGuild === undefined" class="loading-headline">
+        <mat-spinner [diameter]="20"></mat-spinner>
+      </div>
       <a class="hyperlink mat-caption" routerLink="/dashboard">Back to Dashboard</a>
     </div>
     <div *ngIf="router.url.includes('/command/')" class="details-view">

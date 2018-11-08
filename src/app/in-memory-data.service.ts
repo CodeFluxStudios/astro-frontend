@@ -18,7 +18,9 @@ export class InMemoryDataService implements InMemoryDbService {
   parseRequestUrl(url: string, requestInfoUtils: RequestInfoUtilities): ParsedRequestUrl {
     let newUrl = '';
 
-    if (url === 'api/user/guilds/admin') {
+    if (url.includes('api/bot/guilds/')) {
+      newUrl = url.replace('api/bot/guilds/', 'api/adminGuilds/');
+    } else if (url === 'api/user/guilds/admin') {
       newUrl = 'api/adminGuilds';
     } else if (url === 'api/user') {
       newUrl = 'api/user';

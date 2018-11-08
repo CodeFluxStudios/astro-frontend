@@ -4,6 +4,8 @@ import {Observable, of} from 'rxjs';
 import {map, startWith} from 'rxjs/operators';
 import {MatAutocompleteSelectedEvent, MatDialog} from '@angular/material';
 import {NewCommandComponent} from '../new-command/new-command.component';
+import {ActivatedRoute} from '@angular/router';
+import {GuildService} from '../../../services/guild.service';
 
 @Component({
   selector: 'app-guild-overview',
@@ -21,7 +23,9 @@ export class GuildOverviewComponent implements OnInit {
 
   @ViewChild('filterInput') filterInput: ElementRef<HTMLInputElement>;
 
-  constructor(public dialog: MatDialog) {
+  constructor(public dialog: MatDialog,
+              private route: ActivatedRoute,
+              private guildService: GuildService) {
     this.filteredCommands = of(this.allCommands.slice());
 
     this.filteredEvents = this.filterCtrl.valueChanges.pipe(
@@ -67,7 +71,21 @@ export class GuildOverviewComponent implements OnInit {
 
   }
 
+  getGuild() {
+    const guildId = this.route.snapshot.paramMap.get('id');
+    this.guildService.getBotGuild(guildId).subscribe(guild => {
+      if (guild !== null) {
+        console.log(guild);
+        this.guildService.curGuild = guild;
+      } else {
+        console.log('NO GUILD FOUND OR NO ACCESS');
+        console.log(guild);
+      }
+    });
+  }
+
   ngOnInit() {
+    this.getGuild();
   }
 
   private _filter(value: string): string[] {

@@ -33,14 +33,21 @@ export class GuildService {
       );
   }
 
-  /*
-  getBotGuild(guildId: string): Observable<any> {
-    return this.http.get<any>(`api/bot/guilds/${guildId}`)
+
+  getBotGuild(guildId: string): Observable<GuildOverview> {
+    return this.http.get<GuildOverview>(`api/bot/guilds/${guildId}`)
       .pipe(
-        tap(guild => console.log('GuildService - getBotGuild')),
-        catchError(this.handleError('getBotGuild', undefined))
+        tap(data => console.log('GuildService - getBotGuild')),
+        map(data => {
+          const g = new GuildOverview();
+          g.loadGuildOverviewData(data);
+          return g;
+        }),
+        catchError(() => {
+          return of(null);
+        })
       );
-  }*/
+  }
 
   /**
    * Opens a new window to add the bot to a guild.

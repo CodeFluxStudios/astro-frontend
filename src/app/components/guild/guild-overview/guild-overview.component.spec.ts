@@ -15,6 +15,8 @@ import {
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {GuildSettingsComponent} from '../guild-settings/guild-settings.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {RouterTestingModule} from '@angular/router/testing';
+import {HttpClientModule} from '@angular/common/http';
 
 describe('GuildOverviewComponent', () => {
   let component: GuildOverviewComponent;
@@ -38,7 +40,9 @@ describe('GuildOverviewComponent', () => {
         MatDialogModule,
         MatSlideToggleModule,
         MatDividerModule,
-        BrowserAnimationsModule
+        BrowserAnimationsModule,
+        RouterTestingModule,
+        HttpClientModule
       ]
     })
       .compileComponents();
