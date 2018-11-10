@@ -20,6 +20,7 @@ import {
   MatProgressBarModule,
   MatProgressSpinnerModule,
   MatRippleModule,
+  MatSidenavModule,
   MatSlideToggleModule,
   MatSnackBarModule,
   MatToolbarModule
@@ -40,9 +41,12 @@ import {DashboardComponent} from './components/dashboard/dashboard/dashboard.com
 import {NewCommandComponent} from './components/guild/new-command/new-command.component';
 import {GuildOverviewComponent} from './components/guild/guild-overview/guild-overview.component';
 import {GuildSettingsComponent} from './components/guild/guild-settings/guild-settings.component';
-import {CommandEditorComponent} from './components/command/command-editor/command-editor.component';
-
 // CommandDetails
+import {CommandEditorComponent} from './components/command/command-editor/command-editor.component';
+import {ContextMenuComponent} from './components/command/context-menu/context-menu.component';
+import {CommandViewComponent} from './components/command/command-view/command-view.component';
+import {CommandSidenavComponent} from './components/command/command-sidenav/command-sidenav.component';
+
 
 @NgModule({
   declarations: [
@@ -56,7 +60,10 @@ import {CommandEditorComponent} from './components/command/command-editor/comman
     GuildOverviewComponent,
     PageNotFoundComponent,
     GuildSettingsComponent,
-    CommandEditorComponent
+    CommandEditorComponent,
+    ContextMenuComponent,
+    CommandViewComponent,
+    CommandSidenavComponent
   ],
   imports: [
     BrowserModule,
@@ -88,6 +95,7 @@ import {CommandEditorComponent} from './components/command/command-editor/comman
     MatSlideToggleModule,
     MatButtonToggleModule,
     MatDialogModule,
+    MatSidenavModule,
     MatSnackBarModule,
     MatIconModule,
     AppRoutingModule

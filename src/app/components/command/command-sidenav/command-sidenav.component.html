@@ -1,0 +1,10 @@
+<mat-sidenav-container id="sidenavContainer">
+  <mat-sidenav #sidenav mode="side" id="sidenavNavContent">
+    <h1 class="mat-headline">Menu</h1>
+  </mat-sidenav>
+  <mat-sidenav-content id="sidenavContent">
+    <button mat-fab class="mat-elevation-z6" (click)="toggleSidenav()" #toggleBtn>
+      <mat-icon aria-label="Toggle Sidenav">keyboard_arrow_right</mat-icon>
+    </button>
+  </mat-sidenav-content>
+</mat-sidenav-container>

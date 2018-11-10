@@ -1,0 +1,45 @@
+:host {
+  display: flex;
+}
+
+#sidenavContainer {
+  flex: 1 1 auto;
+  display: flex;
+  position: relative;
+
+  #sidenavContent {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    overflow: hidden;
+    left: -10px;
+    z-index: 10;
+
+    button {
+      -webkit-transition: all 0.3s ease-in-out;
+      -moz-transition: all 0.3s ease-in-out;
+      -ms-transition: all 0.3s ease-in-out;
+      -o-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out;
+
+      &.rotated {
+        -webkit-box-shadow: 0px -3px 5px -1px rgba(0, 0, 0, 0.2), 0px -6px 10px 0px rgba(0, 0, 0, 0.14), 0px -1px 18px 0px rgba(0, 0, 0, 0.12);
+        -moz-box-shadow: 0px -3px 5px -1px rgba(0, 0, 0, 0.2), 0px -6px 10px 0px rgba(0, 0, 0, 0.14), 0px -1px 18px 0px rgba(0, 0, 0, 0.12);
+        box-shadow: 0px -3px 5px -1px rgba(0, 0, 0, 0.2), 0px -6px 10px 0px rgba(0, 0, 0, 0.14), 0px -1px 18px 0px rgba(0, 0, 0, 0.12);
+      }
+
+      mat-icon {
+        font-size: 60px;
+        line-height: 25px;
+        padding-right: 30px;
+      }
+    }
+  }
+
+  #sidenavNavContent {
+    width: 400px;
+    padding: 10px 25px;
+  }
+}
