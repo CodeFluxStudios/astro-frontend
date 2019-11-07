@@ -7,8 +7,8 @@ import {MatDrawer} from '@angular/material';
   styleUrls: ['./command-sidenav.component.scss']
 })
 export class CommandSidenavComponent implements OnInit {
-  @ViewChild('sidenav') sidenav: MatDrawer;
-  @ViewChild('toggleBtn', {read: ElementRef}) toggleBtn: ElementRef;
+  @ViewChild('sidenav', {static: false}) sidenav: MatDrawer;
+  @ViewChild('toggleBtn', {static: false, read: ElementRef}) toggleBtn: ElementRef;
 
   constructor(private renderer: Renderer2) {
   }

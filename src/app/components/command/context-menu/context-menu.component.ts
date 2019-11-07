@@ -6,7 +6,7 @@ import {Component, OnInit, ViewChild} from '@angular/core';
   styleUrls: ['./context-menu.component.scss', './context-menu.component.theme.scss']
 })
 export class ContextMenuComponent implements OnInit {
-  @ViewChild('contextMenu') contextMenu;
+  @ViewChild('contextMenu', {static: false}) contextMenu;
 
   constructor() {
     this.addContextMenu();

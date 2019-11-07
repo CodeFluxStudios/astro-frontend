@@ -25,7 +25,7 @@ export class GuildOverviewComponent implements OnInit {
 
   loadingCommands: boolean;
 
-  @ViewChild('filterInput') filterInput: ElementRef<HTMLInputElement>;
+  @ViewChild('filterInput', {static: false}) filterInput: ElementRef<HTMLInputElement>;
 
   constructor(public dialog: MatDialog,
               private route: ActivatedRoute,
