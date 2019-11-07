@@ -44,6 +44,8 @@ import {CommandEditorComponent} from './components/command/command-editor/comman
 import {ContextMenuComponent} from './components/command/context-menu/context-menu.component';
 import {CommandViewComponent} from './components/command/command-view/command-view.component';
 import {CommandSidenavComponent} from './components/command/command-sidenav/command-sidenav.component';
+import {InMemoryDataService} from './in-memory-data.service';
+import {HttpClientInMemoryWebApiModule} from 'angular-in-memory-web-api';
 
 
 @NgModule({
@@ -71,11 +73,11 @@ import {CommandSidenavComponent} from './components/command/command-sidenav/comm
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
     // and returns simulated server responses.
     // TODO: Remove it when a real server is ready to receive requests.
-    /*
+
         HttpClientInMemoryWebApiModule.forRoot(
           InMemoryDataService, {dataEncapsulation: false, passThruUnknownUrl: true, delay: 1000}
         ),
-    */
+
     BrowserAnimationsModule,
     MatButtonModule,
     MatRippleModule,
