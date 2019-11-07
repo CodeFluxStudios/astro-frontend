@@ -19,7 +19,8 @@ export class ContextMenuComponent implements OnInit {
     document.addEventListener('contextmenu', (e) => {
       e.preventDefault();
 
-      if (e.srcElement.id === 'canvas') {
+      // @ts-ignore
+      if (e.target.id === 'canvas') {
         this.toggleCustomContextMenu(e, true);
       } else {
         this.toggleCustomContextMenu(e, false);
