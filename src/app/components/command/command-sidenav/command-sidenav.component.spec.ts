@@ -1,7 +1,8 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
 import {CommandSidenavComponent} from './command-sidenav.component';
-import {MatIconModule, MatSidenavModule} from '@angular/material';
+import { MatIconModule } from '@angular/material/icon';
+import { MatSidenavModule } from '@angular/material/sidenav';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 describe('CommandSidenavComponent', () => {

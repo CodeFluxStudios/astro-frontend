@@ -1,7 +1,8 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
 import {NewCommandComponent} from './new-command.component';
-import {MatListModule, MatProgressSpinnerModule} from '@angular/material';
+import { MatListModule } from '@angular/material/list';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import {HttpClientModule} from '@angular/common/http';
 
 describe('NewCommandComponent', () => {

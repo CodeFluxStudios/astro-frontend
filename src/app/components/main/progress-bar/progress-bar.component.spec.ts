@@ -1,7 +1,7 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
 import {ProgressBarComponent} from './progress-bar.component';
-import {MatProgressBarModule} from '@angular/material';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 describe('ProgressBarComponent', () => {
   let component: ProgressBarComponent;

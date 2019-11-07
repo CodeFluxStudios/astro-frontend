@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
-import {MatIconRegistry, MatSnackBar} from '@angular/material';
+import { MatIconRegistry } from '@angular/material/icon';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import {DomSanitizer} from '@angular/platform-browser';
 import {MessagingService} from './services/messaging.service';
 import {fadeAnimation} from './theme/animations/fade-animation';

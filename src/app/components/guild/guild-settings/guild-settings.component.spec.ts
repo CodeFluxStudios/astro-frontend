@@ -1,7 +1,10 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
 import {GuildSettingsComponent} from './guild-settings.component';
-import {MatCardModule, MatCheckboxModule, MatDividerModule, MatSlideToggleModule} from '@angular/material';
+import { MatCardModule } from '@angular/material/card';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 describe('GuildSettingsComponent', () => {
   let component: GuildSettingsComponent;

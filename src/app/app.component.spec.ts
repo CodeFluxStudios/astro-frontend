@@ -4,14 +4,12 @@ import {ProgressBarComponent} from './components/main/progress-bar/progress-bar.
 import {ToolbarComponent} from './components/main/toolbar/toolbar.component';
 import {FooterComponent} from './components/main/footer/footer.component';
 import {RouterTestingModule} from '@angular/router/testing';
-import {
-  MatCardModule,
-  MatIconModule,
-  MatProgressBarModule,
-  MatProgressSpinnerModule,
-  MatSnackBarModule,
-  MatToolbarModule
-} from '@angular/material';
+import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import {HttpClientModule} from '@angular/common/http';
 
 describe('AppComponent', () => {
