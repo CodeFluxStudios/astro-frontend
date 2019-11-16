@@ -6,4 +6,8 @@
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
+
+  .mat-form-field-appearance-fill .mat-form-field-flex {
+    padding-top: 0px;
+  }
 }

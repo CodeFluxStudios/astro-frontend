@@ -1,7 +1,26 @@
 <div id="contextMenu" #contextMenu class="mat-elevation-z6">
-  <div id="contextOptions">
-    <button mat-button>Add new node</button>
+  <div id="contextOptions" *ngIf="!isCreateNodeContext">
+    <button mat-button (click)="showCreateNodeContext()">Add new node</button>
     <button mat-button>Some Action</button>
     <button mat-button>Rearrange</button>
+  </div>
+  <div id="createNodeContext" *ngIf="isCreateNodeContext">
+    <div id="createNodeContextToolbar">
+      <mat-form-field id="searchNodeFormField" floatLabel="never" appearance="fill" [style.fontSize.px]="14">
+        <input matInput type="text" placeholder="Search Node" [(ngModel)]="nodeSearchTerm">
+        <button mat-button *ngIf="nodeSearchTerm" matSuffix mat-icon-button aria-label="Clear"
+                (click)="nodeSearchTerm=''">
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+    <div id="nodeListContainer">
+      <mat-list role="list">
+        <mat-list-item role="listitem" *ngFor="let node of nodes">
+          <button mat-flat-button>{{node}}</button>
+          <button mat-button mat-icon-button><mat-icon>help_outline</mat-icon></button>
+        </mat-list-item>
+      </mat-list>
+    </div>
   </div>
 </div>
