@@ -26,6 +26,12 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 
 import {AppRoutingModule} from './app-routing.module';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+
+// Rete
+import { ReteComponent } from './rete/rete.component';
+import { ReteModule } from 'rete-angular-render-plugin';
+import { NumberComponent } from './rete/controls/number-control';
+import { MyNodeComponent } from './rete/components/node/node.component';
 // Main
 import {ToolbarComponent} from './components/main/toolbar/toolbar.component';
 import {FooterComponent} from './components/main/footer/footer.component';
@@ -51,6 +57,9 @@ import {HttpClientInMemoryWebApiModule} from 'angular-in-memory-web-api';
 @NgModule({
   declarations: [
     AppComponent,
+    ReteComponent,
+    NumberComponent,
+    MyNodeComponent,
     ToolbarComponent,
     FooterComponent,
     HomeComponent,
@@ -67,6 +76,7 @@ import {HttpClientInMemoryWebApiModule} from 'angular-in-memory-web-api';
   ],
   imports: [
     BrowserModule,
+    ReteModule,
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
@@ -101,7 +111,7 @@ import {HttpClientInMemoryWebApiModule} from 'angular-in-memory-web-api';
     AppRoutingModule
   ],
   providers: [],
-  entryComponents: [NewCommandComponent],
+  entryComponents: [NewCommandComponent, NumberComponent, MyNodeComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule {
